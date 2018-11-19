@@ -8,27 +8,35 @@ namespace Epam.Task1._01_Sequence
 {
     class Program
     {
-        static string Sequence_function (int N)
-        {
-            string output="";
-            for (int i = 1; i < N; i++)
-                output += i.ToString() + ", ";
-            output += N.ToString();
-            return output;
-            
+        static void Sequence_function (int n)
+        { 
+            for (int i = 1; i < n; i++)
+            {
+                Console.Write(i+", ");
+            }
+            Console.WriteLine(n);
         }
 
         static void Main(string[] args)
         {
            Console.Write("Please input positive number: ");
             
-           if (int.TryParse(Console.ReadLine(), out int N))
-                if (N<1)
+           if (int.TryParse(Console.ReadLine(), out int n))
+            {
+                if (n < 1)
+                {
                     Console.WriteLine("Input number must be bigger than 1.");
-                else 
-                    Console.WriteLine("Output: " + Sequence_function(N));
+                }
+                else
+                {
+                    Sequence_function(n);
+                }
+            }
            else
+            {
                 Console.WriteLine("Input incorrect.");
+            }
+                
         }
     }
 }

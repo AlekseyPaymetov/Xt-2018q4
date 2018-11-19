@@ -8,33 +8,52 @@ namespace Epam.Task1._03_Square
 {
     class Program
     {
-        static void Draw_square (int N)
+        static void Draw_square (int n)
         {
-            string line = new string('*',N);
-            string halfOfLine = new string('*', N / 2);
-            string middleLine = halfOfLine + " " + halfOfLine+"\n";
-            string partWithoutSpace = "";
+            for (int i=0; i<n;i++)
+            {
+                for (int j=0; j<n; j++)
+                {
+                    if (i == j && i == n / 2)
+                    {
+                        Console.Write(" ");
+                        continue;
+                    }
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
 
-            for (int i = 0; i < N / 2; i++)
-                partWithoutSpace += line + "\n";
-
-            Console.WriteLine(partWithoutSpace+middleLine+partWithoutSpace);
         }
 
         static void Main(string[] args)
         {
             Console.Write("Please input positive odd number: ");
 
-            if (int.TryParse(Console.ReadLine(), out int N))
-                if (N < 2)
+            if (int.TryParse(Console.ReadLine(), out int n))
+            {
+                if (n < 2)
+                {
                     Console.WriteLine("Input number must be bigger than 1.");
+                }
                 else
-                    if (N % 2 == 0)
-                    Console.WriteLine("Input number must be odd.");
-                else
-                    Draw_square(N);
+                {
+                    if (n % 2 == 0)
+                    {
+                        Console.WriteLine("Input number must be odd.");
+                    }
+                    else
+                    {
+                        Draw_square(n);
+                    }
+                }
+            }
+
             else
+            {
                 Console.WriteLine("Input incorrect.");
+            }
+                
 
         }
     }
