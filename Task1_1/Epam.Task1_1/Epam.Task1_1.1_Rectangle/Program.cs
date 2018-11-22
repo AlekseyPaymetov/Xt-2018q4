@@ -25,7 +25,7 @@ namespace Epam.Task1_1._1_Rectangle
                 return;
             }
 
-            Console.WriteLine("Square of rectagle: {0}",a*b);
+            Console.WriteLine("Square of rectagle: {0}", a * b);
         }
     }
 }

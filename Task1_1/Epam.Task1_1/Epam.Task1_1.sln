@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.1_Rectangle", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.2_Triangle", "2_Triangle\Epam.Task1_1.2_Triangle.csproj", "{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.3_Another Triangle", "Epam.Task1_1.3_Another Triangle\Epam.Task1_1.3_Another Triangle.csproj", "{E2BFC763-821E-43F9-87AB-2ACE0406422F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2BFC763-821E-43F9-87AB-2ACE0406422F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2BFC763-821E-43F9-87AB-2ACE0406422F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2BFC763-821E-43F9-87AB-2ACE0406422F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2BFC763-821E-43F9-87AB-2ACE0406422F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

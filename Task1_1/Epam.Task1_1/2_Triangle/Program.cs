@@ -13,9 +13,9 @@ namespace _2_Triangle
             Console.Write("Please enter the number of strings (N>0): ");
             int.TryParse(Console.ReadLine(), out int n);
 
-            for (int i=1; i<=n; i++)
+            for (int i = 1; i <= n; i++)
             {
-                for (int j=1; j<=i; j++)
+                for (int j = 1; j <= i; j++)
                 {
                     Console.Write('*');
                 }
