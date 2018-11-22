@@ -11,10 +11,10 @@ namespace Epam.Task1_1._6_Font_Adjustment
         [Flags]
         enum SettingsForText
         {
-            None = 0x0,
-            Bold = 0x1,
-            Italic = 0x2,
-            Underline = 0x4
+            None = 0,
+            Bold = 1,
+            Italic = 2,
+            Underline = 4
         }
 
         static void Main(string[] args)
