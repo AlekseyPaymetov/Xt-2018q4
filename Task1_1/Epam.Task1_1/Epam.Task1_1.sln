@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.5 Sum of Numbe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.6 Font Adjustment", "Epam.Task1_1.6 Font Adjustment\Epam.Task1_1.6 Font Adjustment.csproj", "{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.7 Array processing", "Epam.Task1_1. 7 Array processing\Epam.Task1_1.7 Array processing.csproj", "{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
