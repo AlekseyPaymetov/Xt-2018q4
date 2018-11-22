@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.4 X-mas tree",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.5 Sum of Numbers", "Epam.Task1_1.5 Sum of Numbers\Epam.Task1_1.5 Sum of Numbers.csproj", "{4AEC1ADB-1F9B-4704-9CAE-9311B4ED3735}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.6 Font Adjustment", "Epam.Task1_1.6 Font Adjustment\Epam.Task1_1.6 Font Adjustment.csproj", "{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4AEC1ADB-1F9B-4704-9CAE-9311B4ED3735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AEC1ADB-1F9B-4704-9CAE-9311B4ED3735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AEC1ADB-1F9B-4704-9CAE-9311B4ED3735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
