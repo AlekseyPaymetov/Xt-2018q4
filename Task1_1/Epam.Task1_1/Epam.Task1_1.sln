@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.10 2d array", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.11 Average string length", "Epam.Task1_1.11 Average string length\Epam.Task1_1.11 Average string length.csproj", "{9F2D3580-3D03-402C-93CD-D996B4FE95A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.12 Char double", "Epam.Task1_1.12 Char double\Epam.Task1_1.12 Char double.csproj", "{57AE4D5F-E21D-4999-8425-09781B8DCA25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{9F2D3580-3D03-402C-93CD-D996B4FE95A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F2D3580-3D03-402C-93CD-D996B4FE95A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F2D3580-3D03-402C-93CD-D996B4FE95A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57AE4D5F-E21D-4999-8425-09781B8DCA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57AE4D5F-E21D-4999-8425-09781B8DCA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57AE4D5F-E21D-4999-8425-09781B8DCA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57AE4D5F-E21D-4999-8425-09781B8DCA25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
