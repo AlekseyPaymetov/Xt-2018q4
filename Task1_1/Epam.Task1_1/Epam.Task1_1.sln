@@ -5,17 +5,11 @@ VisualStudioVersion = 15.0.28306.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.1_Rectangle", "Epam.Task1_1.1_Rectangle\Epam.Task1_1.1_Rectangle.csproj", "{560E3A06-DA17-418E-9F74-317147D671B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.2_Triangle", "2_Triangle\Epam.Task1_1.2_Triangle.csproj", "{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.3_Another Triangle", "Epam.Task1_1.3_Another Triangle\Epam.Task1_1.3_Another Triangle.csproj", "{E2BFC763-821E-43F9-87AB-2ACE0406422F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.4 X-mas tree", "Epam,Task1_1.4 X-mas tree\Epam.Task1_1.4 X-mas tree.csproj", "{F7843D53-1842-42A3-B970-D5F2DBD97F74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.5 Sum of Numbers", "Epam.Task1_1.5 Sum of Numbers\Epam.Task1_1.5 Sum of Numbers.csproj", "{4AEC1ADB-1F9B-4704-9CAE-9311B4ED3735}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.6 Font Adjustment", "Epam.Task1_1.6 Font Adjustment\Epam.Task1_1.6 Font Adjustment.csproj", "{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.7 Array processing", "Epam.Task1_1. 7 Array processing\Epam.Task1_1.7 Array processing.csproj", "{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.8 No positive", "Epam.Task1_1.8 No positive\Epam.Task1_1.8 No positive.csproj", "{E65D937B-E9D6-40FC-A065-F067CA1282E5}"
 EndProject
@@ -27,6 +21,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.11 Average str
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.12 Char double", "Epam.Task1_1.12 Char double\Epam.Task1_1.12 Char double.csproj", "{57AE4D5F-E21D-4999-8425-09781B8DCA25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.2_Triangle", "Epam.Task1_1.2 Triangle\Epam.Task1_1.2_Triangle.csproj", "{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.4 X-mas tree", "Epam.Task1_1.4 X-mas tree\Epam.Task1_1.4 X-mas tree.csproj", "{F7843D53-1842-42A3-B970-D5F2DBD97F74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task1_1.7 Array processing", "Epam.Task1_1.7 Array processing\Epam.Task1_1.7 Array processing.csproj", "{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,18 +37,10 @@ Global
 		{560E3A06-DA17-418E-9F74-317147D671B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{560E3A06-DA17-418E-9F74-317147D671B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{560E3A06-DA17-418E-9F74-317147D671B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E2BFC763-821E-43F9-87AB-2ACE0406422F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E2BFC763-821E-43F9-87AB-2ACE0406422F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2BFC763-821E-43F9-87AB-2ACE0406422F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2BFC763-821E-43F9-87AB-2ACE0406422F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F7843D53-1842-42A3-B970-D5F2DBD97F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F7843D53-1842-42A3-B970-D5F2DBD97F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F7843D53-1842-42A3-B970-D5F2DBD97F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F7843D53-1842-42A3-B970-D5F2DBD97F74}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AEC1ADB-1F9B-4704-9CAE-9311B4ED3735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AEC1ADB-1F9B-4704-9CAE-9311B4ED3735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AEC1ADB-1F9B-4704-9CAE-9311B4ED3735}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,10 +49,6 @@ Global
 		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84E65735-AC12-4ABE-95C8-BAD4CBFF7163}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E65D937B-E9D6-40FC-A065-F067CA1282E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E65D937B-E9D6-40FC-A065-F067CA1282E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E65D937B-E9D6-40FC-A065-F067CA1282E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +69,18 @@ Global
 		{57AE4D5F-E21D-4999-8425-09781B8DCA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57AE4D5F-E21D-4999-8425-09781B8DCA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57AE4D5F-E21D-4999-8425-09781B8DCA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BDA48C9-F076-482C-9A34-D3DE5F966C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7843D53-1842-42A3-B970-D5F2DBD97F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7843D53-1842-42A3-B970-D5F2DBD97F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7843D53-1842-42A3-B970-D5F2DBD97F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7843D53-1842-42A3-B970-D5F2DBD97F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4370E0A3-0B97-4D9D-8C20-CB7C74FBD544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
