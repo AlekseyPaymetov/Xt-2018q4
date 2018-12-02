@@ -19,7 +19,7 @@ namespace Epam.Task02_oop._3_user
             Console.Write("Please enter surname of user: ");
             string patronymic = Console.ReadLine();
 
-            Console.Write("Please enter birth date of user: ");
+            Console.Write("Please enter birth date of user (example: 21.01.2000): ");
             string time = Console.ReadLine();
             DateTime.TryParse(time, out DateTime birthDate);
 
