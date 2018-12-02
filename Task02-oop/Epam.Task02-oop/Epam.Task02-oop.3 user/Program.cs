@@ -27,12 +27,12 @@ namespace Epam.Task02_oop._3_user
             {
                 User user = new User(name, surname, patronymic, birthDate);
                 Console.WriteLine($"{Environment.NewLine}Input user:");
-                user.ShowDataToConsole();
+                user.ShowOnConsole();
                 Console.WriteLine($"{Environment.NewLine}Then i changed user name and date of birth in program on my:{Environment.NewLine}");
                 user.Name = "Aleksey";
                 DateTime.TryParse("17.03.1988", out birthDate);
                 user.BirthDate = birthDate;
-                user.ShowDataToConsole();
+                user.ShowOnConsole();
             }
             catch (ArgumentException e)
             {

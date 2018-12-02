@@ -63,45 +63,47 @@ namespace Epam.Task02_oop._3_user
 
         public int Age
         {
-            get
-            {
-                DateTime now = DateTime.Now;
-
-                if (now.Month > this.birthDate.Month)
-                {
-                    return now.Year - this.birthDate.Year;
-                }
-                else
-                {
-                    if (now.Month < this.birthDate.Month)
-                    {
-                        return now.Year - this.birthDate.Year - 1;
-                    }
-                    else
-                    {
-                        if (now.Day >= this.birthDate.Day)
-                        {
-                            return now.Year - this.birthDate.Year;
-                        }
-                        else
-                        {
-                            return now.Year - this.birthDate.Year - 1;
-                        }
-                    }
-                }
-            }
+            get => this.CalcYears(this.BirthDate);
         }
 
-        public void ShowDataToConsole()
+        public virtual void ShowOnConsole()
         {
             Console.WriteLine($"Name: {this.Name}");
             Console.WriteLine($"Surame: {this.Surname}");
             Console.WriteLine($"Patronymic: {this.Patronymic}");
             Console.WriteLine("Birth date: {0:d}", this.BirthDate);
-            Console.WriteLine($"Age: {this.Age}");
+            Console.WriteLine($"Age: {this.Age} years");
         }
 
-        private void CheckOnSymbols(string checkString)
+        protected int CalcYears(DateTime time)
+        {
+            DateTime now = DateTime.Now;
+
+            if (now.Month > time.Month)
+            {
+                return now.Year - time.Year;
+            }
+            else
+            {
+                if (now.Month < time.Month)
+                {
+                    return now.Year - time.Year - 1;
+                }
+                else
+                {
+                    if (now.Day >= time.Day)
+                    {
+                        return now.Year - time.Year;
+                    }
+                    else
+                    {
+                        return now.Year - time.Year - 1;
+                    }
+                }
+            }
+        }
+
+        protected void CheckOnSymbols(string checkString)
         {
             char[] arrayOfString = checkString.ToCharArray();
             foreach (char symbol in arrayOfString)
@@ -113,7 +115,7 @@ namespace Epam.Task02_oop._3_user
             }
         }
 
-        private void CheckBirthDate(DateTime birthDate)
+        protected void CheckBirthDate(DateTime birthDate)
         {
             if (birthDate.Year < 1900)
             {
