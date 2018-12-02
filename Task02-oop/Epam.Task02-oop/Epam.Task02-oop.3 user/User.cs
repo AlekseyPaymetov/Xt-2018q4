@@ -63,7 +63,33 @@ namespace Epam.Task02_oop._3_user
 
         public int Age
         {
-            get => DateTime.Now.Year - this.birthDate.Year;
+            get
+            {
+                DateTime now = DateTime.Now;
+
+                if (now.Month > this.birthDate.Month)
+                {
+                    return now.Year - this.birthDate.Year;
+                }
+                else
+                {
+                    if (now.Month < this.birthDate.Month)
+                    {
+                        return now.Year - this.birthDate.Year - 1;
+                    }
+                    else
+                    {
+                        if (now.Day >= this.birthDate.Day)
+                        {
+                            return now.Year - this.birthDate.Year;
+                        }
+                        else
+                        {
+                            return now.Year - this.birthDate.Year - 1;
+                        }
+                    }
+                }
+            }
         }
 
         public void ShowDataToConsole()
