@@ -15,6 +15,11 @@ namespace Epam.Task02_oop._4_my_string
             this.myString = inputString.ToCharArray();
         }
 
+        public MyString(char[] inputCharArray)
+        {
+            this.myString = inputCharArray;
+        }
+
         public int Length
         {
             get => this.myString.Length;
