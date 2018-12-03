@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02-oop.4 my string
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02-oop.5  employee", "Epam.Task02-oop.5  employee\Epam.Task02-oop.5  employee.csproj", "{C79178B8-E352-4FC8-940A-B3C5FE2B0E14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02-oop.6 ring", "Epam.Task02-oop.6 ring\Epam.Task02-oop.6 ring.csproj", "{8A7AA7AB-76FE-40F0-8C7D-65CCA22D3762}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C79178B8-E352-4FC8-940A-B3C5FE2B0E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C79178B8-E352-4FC8-940A-B3C5FE2B0E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C79178B8-E352-4FC8-940A-B3C5FE2B0E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7AA7AB-76FE-40F0-8C7D-65CCA22D3762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7AA7AB-76FE-40F0-8C7D-65CCA22D3762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7AA7AB-76FE-40F0-8C7D-65CCA22D3762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7AA7AB-76FE-40F0-8C7D-65CCA22D3762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
