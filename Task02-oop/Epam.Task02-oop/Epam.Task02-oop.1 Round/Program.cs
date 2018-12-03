@@ -39,7 +39,7 @@ namespace Epam.Task02_oop._1_Round
             try
             {
                 Round someRound = new Round(x, y, radius);
-
+                
                 Console.WriteLine("Length of input round: {0:.000}", someRound.Length);
                 Console.WriteLine("Area of input round: {0:.000}", someRound.Area);
             }

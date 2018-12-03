@@ -21,7 +21,12 @@ namespace Epam.Task02_oop._3_user
 
             Console.Write("Please enter birth date of user (example: 21.01.2000): ");
             string time = Console.ReadLine();
-            DateTime.TryParse(time, out DateTime birthDate);
+
+            if (!DateTime.TryParse(time, out DateTime birthDate))
+            {
+                Console.WriteLine("Incorrect birth date.");
+                return;
+            }
 
             try
             {

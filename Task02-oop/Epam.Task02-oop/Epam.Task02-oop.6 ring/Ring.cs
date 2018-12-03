@@ -19,6 +19,26 @@ namespace Epam.Task02_oop._6_ring
             this.outerRound = new Round(x, y, outerRadius);
         }
 
+        public double X
+        {
+            get => this.innerRound.X;
+        }
+
+        public double Y
+        {
+            get => this.innerRound.Y;
+        }
+
+        public double InnerRadius
+        {
+            get => this.innerRound.Radius;
+        }
+
+        public double OuterRadius
+        {
+            get => this.outerRound.Radius;
+        }
+
         public double Area
         {
             get => this.outerRound.Area - this.innerRound.Area;
@@ -31,6 +51,11 @@ namespace Epam.Task02_oop._6_ring
 
         protected void CheckInnerAndOuterRadius(double innerRadius, double outerRadius)
         {
+            if (innerRadius <= 0 || outerRadius <= 0)
+            {
+                throw new ArgumentException("Radius should be positive");
+            }
+
             if (innerRadius >= outerRadius)
             {
                 throw new ArgumentException("Inner radius should be smaller then outer radius");

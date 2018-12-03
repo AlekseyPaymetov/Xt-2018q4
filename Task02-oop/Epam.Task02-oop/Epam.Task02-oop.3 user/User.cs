@@ -105,6 +105,11 @@ namespace Epam.Task02_oop._3_user
 
         protected void CheckOnSymbols(string checkString)
         {
+            if (string.IsNullOrEmpty(checkString))
+            {
+                throw new ArgumentException("Input string is null or empty");
+            }
+
             char[] arrayOfString = checkString.ToCharArray();
             foreach (char symbol in arrayOfString)
             {
