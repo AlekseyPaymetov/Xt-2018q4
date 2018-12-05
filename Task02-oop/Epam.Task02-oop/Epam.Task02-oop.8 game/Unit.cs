@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task02_oop._8_game
 {
-    public class Unit 
+    public class Unit
     {
         public Unit(string nameOfUnit, Coordinates position)
         {
@@ -22,6 +22,11 @@ namespace Epam.Task02_oop._8_game
         public Coordinates Position
         {
             get; private set;
+        }
+
+        public bool InUnit(int x, int y)
+        {
+            return true;
         }
 
         public virtual void DrawUnit()
