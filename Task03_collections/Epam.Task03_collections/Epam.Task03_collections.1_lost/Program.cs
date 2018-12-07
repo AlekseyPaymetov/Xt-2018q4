@@ -19,7 +19,12 @@ namespace Epam.Task03_collections._1_lost
             Console.WriteLine($"{Environment.NewLine}Random round of people: ");
             ShowList();
             Console.WriteLine($"{Environment.NewLine}Then deleted every 2nd man: ");
-            DelEveryTwo();
+            while (list.Count>1)
+            {
+                DelEveryTwo();
+                ShowList();
+            }
+            
         }
 
         private static void GenerateList(int n)
@@ -64,12 +69,6 @@ namespace Epam.Task03_collections._1_lost
                 }
 
                 list.AddLast(array[i - 1]);
-            }
-
-            ShowList();
-            if (list.Count > 1)
-            {
-                DelEveryTwo();
             }
         }
 
