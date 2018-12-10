@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task03_collections.2_w
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task03_collections.3_dynamic_array", "Epam.Task03_collections.3_dynamic_array\Epam.Task03_collections.3_dynamic_array.csproj", "{1276FACF-6C19-4405-904B-4B3AB9B79548}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task03_collections.4_dynamic_array", "Epam.Task03_collections.4_dynamic_array\Epam.Task03_collections.4_dynamic_array.csproj", "{5917AAC0-7BF3-4E4E-9B67-F6DDE1F05471}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1276FACF-6C19-4405-904B-4B3AB9B79548}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1276FACF-6C19-4405-904B-4B3AB9B79548}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1276FACF-6C19-4405-904B-4B3AB9B79548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5917AAC0-7BF3-4E4E-9B67-F6DDE1F05471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5917AAC0-7BF3-4E4E-9B67-F6DDE1F05471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5917AAC0-7BF3-4E4E-9B67-F6DDE1F05471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5917AAC0-7BF3-4E4E-9B67-F6DDE1F05471}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

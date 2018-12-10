@@ -11,14 +11,12 @@ namespace Epam.Task03_collections._3_dynamic_array
     {
         private const int DefaultSize = 8;
 
-        private int index;
-
         public DynamicArray()
         {
             this.DynArray = new T[DefaultSize];
             this.Capacity = DefaultSize;
             this.Length = 0;
-            this.index = -1;
+            this.Index = -1;
         }
 
         public DynamicArray(int n)
@@ -30,6 +28,7 @@ namespace Epam.Task03_collections._3_dynamic_array
 
             this.Capacity = n;
             this.Length = 0;
+            this.Index = -1;
             this.DynArray = new T[n];
         }
 
@@ -41,29 +40,35 @@ namespace Epam.Task03_collections._3_dynamic_array
         public T[] DynArray
         {
             get;
-            private set;
+            protected set;
         }
 
         public int Length
         {
             get;
-            private set;
+            protected set;
         }
 
         public int Capacity
         {
             get;
-            private set;
+            protected set;
         }
 
         public T Current
         {
-            get => this.DynArray[this.index];
+            get => this.DynArray[this.Index];
         }
 
         object IEnumerator.Current
         {
-            get => this.DynArray[this.index];
+            get => this.DynArray[this.Index];
+        }
+
+        protected int Index
+        {
+            get;
+            set;
         }
 
         public T this[int index]
@@ -104,15 +109,15 @@ namespace Epam.Task03_collections._3_dynamic_array
             this.Reset();
         }
 
-        public bool MoveNext()
+        public virtual bool MoveNext()
         {
-            this.index++;
-            return this.index < this.Length;
+            this.Index++;
+            return this.Index < this.Length;
         }
 
         public void Reset()
         {
-            this.index = -1;
+            this.Index = -1;
         }
 
         public void Add(T element)
