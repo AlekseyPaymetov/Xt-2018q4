@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Epam.Task04_delegate_and_ext.2_custom_sort_demo")]
+[assembly: AssemblyTitle("Epam.Task04_delegates_and_ext.2_custom_sort_demo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Epam.Task04_delegate_and_ext.2_custom_sort_demo")]
+[assembly: AssemblyProduct("Epam.Task04_delegates_and_ext.2_custom_sort_demo")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegates_and_ext.1_custom_sort", "Epam.Task04_delegates_and_ext.1_custom_sort\Epam.Task04_delegates_and_ext.1_custom_sort.csproj", "{E485281C-44AB-4E78-ABAF-C1AFCBC18F66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegate_and_ext.2_custom_sort_demo", "Epam.Task04_delegate_and_ext.2_custom_sort_demo\Epam.Task04_delegate_and_ext.2_custom_sort_demo.csproj", "{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegates_and_ext.3_sorting_unit", "Epam.Task04_delegates_and_ext.3_sorting_unit\Epam.Task04_delegates_and_ext.3_sorting_unit.csproj", "{DDED0A4E-7FE5-4793-AF8A-5CD7970C4AB0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegates_and_ext.4_number_array_sum", "Epam.Task04_delegates_and_ext.4_number_array_sum\Epam.Task04_delegates_and_ext.4_number_array_sum.csproj", "{0F0CCA72-AFA9-40AD-8978-474AFFDC492F}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegates_and_ext.5_to_int_or_not_to_int", "Epam.Task04_delegates_and_ext.5_to_int_or_not_to_int\Epam.Task04_delegates_and_ext.5_to_int_or_not_to_int.csproj", "{49B9B5F2-0FA1-4AEC-80E3-3D23C892DD33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegates_and_ext.6_i_seek_you", "Epam.Task04_delegates_and_ext.6_i_seek_you\Epam.Task04_delegates_and_ext.6_i_seek_you.csproj", "{6196EDEA-2783-4CBA-AD5E-3DB2D309A1B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegates_and_ext.2_custom_sort_demo", "Epam.Task04_delegates_and_ext.2_custom_sort_demo\Epam.Task04_delegates_and_ext.2_custom_sort_demo.csproj", "{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{E485281C-44AB-4E78-ABAF-C1AFCBC18F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E485281C-44AB-4E78-ABAF-C1AFCBC18F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E485281C-44AB-4E78-ABAF-C1AFCBC18F66}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDED0A4E-7FE5-4793-AF8A-5CD7970C4AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DDED0A4E-7FE5-4793-AF8A-5CD7970C4AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDED0A4E-7FE5-4793-AF8A-5CD7970C4AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{6196EDEA-2783-4CBA-AD5E-3DB2D309A1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6196EDEA-2783-4CBA-AD5E-3DB2D309A1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6196EDEA-2783-4CBA-AD5E-3DB2D309A1B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72229E2D-D9FC-4E2C-9D6F-3B321AF2B7D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
