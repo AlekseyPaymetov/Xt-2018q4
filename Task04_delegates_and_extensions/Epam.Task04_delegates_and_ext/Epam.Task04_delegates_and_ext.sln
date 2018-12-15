@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegates_and_e
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegates_and_ext.5_to_int_or_not_to_int", "Epam.Task04_delegates_and_ext.5_to_int_or_not_to_int\Epam.Task04_delegates_and_ext.5_to_int_or_not_to_int.csproj", "{49B9B5F2-0FA1-4AEC-80E3-3D23C892DD33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task04_delegates_and_ext.6_i_seek_you", "Epam.Task04_delegates_and_ext.6_i_seek_you\Epam.Task04_delegates_and_ext.6_i_seek_you.csproj", "{6196EDEA-2783-4CBA-AD5E-3DB2D309A1B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{49B9B5F2-0FA1-4AEC-80E3-3D23C892DD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49B9B5F2-0FA1-4AEC-80E3-3D23C892DD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49B9B5F2-0FA1-4AEC-80E3-3D23C892DD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6196EDEA-2783-4CBA-AD5E-3DB2D309A1B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6196EDEA-2783-4CBA-AD5E-3DB2D309A1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6196EDEA-2783-4CBA-AD5E-3DB2D309A1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6196EDEA-2783-4CBA-AD5E-3DB2D309A1B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
