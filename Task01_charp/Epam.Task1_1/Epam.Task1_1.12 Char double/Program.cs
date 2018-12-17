@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1_1._12_Char_double
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.Write("Please input 1st string: ");
             char[] str = Console.ReadLine().ToCharArray();
@@ -16,12 +16,12 @@ namespace Epam.Task1_1._12_Char_double
             char[] strCreateDouble = Console.ReadLine().ToCharArray();
             StringBuilder outputString = new StringBuilder();
 
-            for (int i=0; i<str.Length; i++)
+            for (int i = 0; i < str.Length; i++)
             {
                 bool symbolFind = false;
-                for (int j=0; j<strCreateDouble.Length; j++)
+                for (int j = 0; j < strCreateDouble.Length; j++)
                 {
-                    if (str[i]==strCreateDouble[j])
+                    if (str[i] == strCreateDouble[j])
                     {
                         symbolFind = true;
                         break;
@@ -29,11 +29,13 @@ namespace Epam.Task1_1._12_Char_double
                 }
 
                 outputString.Append(str[i]);
-                if (symbolFind) outputString.Append(str[i]);
+                if (symbolFind)
+                {
+                    outputString.Append(str[i]);
+                }
             }
 
             Console.WriteLine($"Result string: {outputString}");
-
         }
     }
 }

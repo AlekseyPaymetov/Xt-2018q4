@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1_1._6_Font_Adjustment
 {
-    class Program
+    public class Program
     {
         [Flags]
-        enum SettingsForText
+        public enum SettingsForText
         {
             None = 0,
             Bold = 1,
@@ -17,7 +17,7 @@ namespace Epam.Task1_1._6_Font_Adjustment
             Underline = 4
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int n = 0;
             SettingsForText set = 0;

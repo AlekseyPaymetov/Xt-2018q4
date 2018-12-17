@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1_1._7_Array_processing
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            const int n = 20;
-            int[] array = new int[n];
+            const int N = 20;
+            int[] array = new int[N];
             Random rng = new Random();
             Console.WriteLine("Initial array:");
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rng.Next(n * 2);
-                Console.Write(array[i]+" ");
+                array[i] = rng.Next(N * 2);
+                Console.Write(array[i] + " ");
             }
 
             for (int i = 0; i < array.Length; i++)
@@ -38,13 +38,15 @@ namespace Epam.Task1_1._7_Array_processing
                 array[i] = array[indexOfMin];
                 array[indexOfMin] = begin;
             }
+
             Console.WriteLine(Environment.NewLine);
-            Console.WriteLine("Min in array: {0}. Max in array: {1}",array[0],array[array.Length-1]);
-            Console.WriteLine(Environment.NewLine+"Sorted array:");
-            for (int i=0; i<array.Length; i++)
+            Console.WriteLine("Min in array: {0}. Max in array: {1}", array[0], array[array.Length - 1]);
+            Console.WriteLine(Environment.NewLine + "Sorted array:");
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.Write(array[i]+" ");
+                Console.Write(array[i] + " ");
             }
+
             Console.WriteLine(Environment.NewLine);
         }
     }

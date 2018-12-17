@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _2_Triangle
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.Write("Please enter the number of strings (N>0): ");
             int.TryParse(Console.ReadLine(), out int n);
@@ -19,6 +19,7 @@ namespace _2_Triangle
                 {
                     Console.Write('*');
                 }
+
                 Console.WriteLine();
             }
         }

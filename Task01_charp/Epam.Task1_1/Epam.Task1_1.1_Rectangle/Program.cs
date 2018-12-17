@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1_1._1_Rectangle
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.Write("Please input a: ");
             int.TryParse(Console.ReadLine(), out int a);
@@ -17,6 +17,7 @@ namespace Epam.Task1_1._1_Rectangle
                 Console.WriteLine("Input incorrect: a must be bigger then 0");
                 return;
             }
+
             Console.Write("Please input b: ");
             int.TryParse(Console.ReadLine(), out int b);
             if (b < 1)

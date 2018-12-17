@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1_1._8_No_positive
 {
-    class Program
+    public class Program
     {
-        static void ShowArray (int[,,]array)
+        public static void ShowArray(int[,,] array)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -18,25 +18,26 @@ namespace Epam.Task1_1._8_No_positive
                     Console.WriteLine();
                     for (int k = 0; k < array.GetLength(2); k++)
                     {
-                        Console.Write(array[i,j,k]+" ");
+                        Console.Write(array[i, j, k] + " ");
                     }
                 }
             }
+
             Console.WriteLine();
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            const int n = 3;
-            int[,,] array = new int[n,n,n];
+            const int N = 3;
+            int[,,] array = new int[N, N, N];
             Random rng = new Random();
-            for (int i=0; i<array.GetLength(0);i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     for (int k = 0; k < array.GetLength(2); k++)
                     {
-                        array[i,j,k] = rng.Next(-100,100);
+                        array[i, j, k] = rng.Next(-100, 100);
                     }
                 }
             }
@@ -50,7 +51,7 @@ namespace Epam.Task1_1._8_No_positive
                 {
                     for (int k = 0; k < array.GetLength(2); k++)
                     {
-                        if (array[i,j,k]>0)
+                        if (array[i, j, k] > 0)
                         {
                             array[i, j, k] = 0;
                         }
@@ -58,9 +59,8 @@ namespace Epam.Task1_1._8_No_positive
                 }
             }
 
-            Console.Write(Environment.NewLine+"No positive array:");
+            Console.Write(Environment.NewLine + "No positive array:");
             ShowArray(array);
-
         }
     }
 }

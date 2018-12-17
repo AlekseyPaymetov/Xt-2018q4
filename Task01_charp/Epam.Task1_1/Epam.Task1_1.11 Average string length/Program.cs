@@ -6,23 +6,20 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1_1._11_Average_string_length
 {
-
-    class Program
+    public class Program
     {
-
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Please input a string:");
-            string s=Console.ReadLine();
+            string s = Console.ReadLine();
             char[] arrayOfChars = s.ToArray();
-            
+
             bool wordStarted = false;
             int countOfWords = 0;
             int countOfSymblosInWords = 0;
 
-            for (int i=0; i<arrayOfChars.Length; i++)
+            for (int i = 0; i < arrayOfChars.Length; i++)
             {
-                
                 if (char.IsLetter(arrayOfChars[i]))
                 {
                     countOfSymblosInWords++;
@@ -34,16 +31,16 @@ namespace Epam.Task1_1._11_Average_string_length
                     {
                         wordStarted = false;
                         countOfWords++;
-                    } 
+                    }
                 }
             }
 
-            if (char.IsLetter(arrayOfChars[arrayOfChars.Length-1]))
+            if (char.IsLetter(arrayOfChars[arrayOfChars.Length - 1]))
             {
                 countOfWords++;
             }
-            Console.WriteLine("Avarage length of words is: {0:0.###}",(double)countOfSymblosInWords/(countOfWords));
 
+            Console.WriteLine("Avarage length of words is: {0:0.###}", (double)countOfSymblosInWords / countOfWords);
         }
     }
 }

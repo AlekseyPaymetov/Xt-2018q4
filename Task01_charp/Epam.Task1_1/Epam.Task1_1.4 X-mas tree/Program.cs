@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam_Task1_1._4_X_mas_tree
 {
-    class Program
+    public class Program
     {
-
-        static void DrawAnotherTriangle(int n)
-        {
-
-        }
-
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.Write("Please enter the number of strings (N>0): ");
             int.TryParse(Console.ReadLine(), out int n);
@@ -24,12 +18,10 @@ namespace Epam_Task1_1._4_X_mas_tree
                 return;
             }
 
-            int maxLength = 1 + 2 * (n - 1);
-  
+            int maxLength = 1 + (2 * (n - 1));
             for (int k = 1; k <= n; k++)
             {
-
-                int startPosition = maxLength / 2 + 1;
+                int startPosition = (maxLength / 2) + 1;
                 int currentLenght = 1;
                 for (int i = 1; i <= k; i++, currentLenght += 2, startPosition--)
                 {
@@ -44,10 +36,10 @@ namespace Epam_Task1_1._4_X_mas_tree
                             Console.Write('*');
                         }
                     }
+
                     Console.WriteLine();
                 }
             }
-
         }
     }
 }
