@@ -8,21 +8,20 @@ namespace Epam.Task1_1._5_Sum_of_Numbers
 {
     public class Program
     {
+        public static int ArithmeticProgression(int step, int maxValue)
+        {
+            int n = (maxValue - 1) / step;
+            double result = (double)((step + (step * n)) / 2) * n;
+            return (int)result;
+        }
+
         public static void Main(string[] args)
         {
-            long sum = 0;
-            const int Number = 1000;
-            for (int i = 0; i < Number; i += 5)
-            {
-                sum += i;
-            }
-
-            for (int i = 0; i < Number; i += 3)
-            {
-                sum += i;
-            }
-
-            Console.WriteLine($"the sum of all numbers less than {Number} times 3 and 5: {sum}");
+            const int A = 5;
+            const int B = 3;
+            const int N = 1000;
+            int result = ArithmeticProgression(A, N) + ArithmeticProgression(B, N) - ArithmeticProgression(A * B, N);
+            Console.WriteLine($"the sum of all numbers less than {N} times {A} and {B}: {result}");
         }
     }
 }
