@@ -6,27 +6,28 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1._03_Square
 {
-    class Program
+    public class Program
     {
-        static void Draw_square (int n)
+        public static void DrawSquare(int n)
         {
-            for (int i=0; i<n;i++)
+            for (int i = 0; i < n; i++)
             {
-                for (int j=0; j<n; j++)
+                for (int j = 0; j < n; j++)
                 {
                     if (i == j && i == n / 2)
                     {
                         Console.Write(" ");
                         continue;
                     }
+
                     Console.Write("*");
                 }
+
                 Console.WriteLine();
             }
-
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.Write("Please input positive odd number: ");
 
@@ -44,17 +45,14 @@ namespace Epam.Task1._03_Square
                     }
                     else
                     {
-                        Draw_square(n);
+                        DrawSquare(n);
                     }
                 }
             }
-
             else
             {
                 Console.WriteLine("Input incorrect.");
             }
-                
-
         }
     }
 }

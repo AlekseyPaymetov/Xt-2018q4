@@ -6,18 +6,22 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1._02_Simple
 {
-    class Program
+    public class Program
     {
-        static bool Check_for_simple (int n)
+        public static bool CheckForSimple(int n)
         {
             for (int i = 2; i <= Math.Sqrt(n); i++)
             {
-                if (n % i == 0) return false;
+                if (n % i == 0)
+                {
+                    return false;
+                }
             }
+
             return true;
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.Write("Please input positive number: ");
 
@@ -29,7 +33,7 @@ namespace Epam.Task1._02_Simple
                 }
                 else
                 {
-                    if (Check_for_simple(n))
+                    if (CheckForSimple(n))
                     {
                         Console.WriteLine("Input number is simple.");
                     }
@@ -39,12 +43,10 @@ namespace Epam.Task1._02_Simple
                     }
                 }
             }
-
             else
-                {
-                    Console.WriteLine("Input incorrect.");
-                }
-                
+            {
+                Console.WriteLine("Input incorrect.");
+            }
         }
     }
 }

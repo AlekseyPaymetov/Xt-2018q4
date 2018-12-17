@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1._01_Sequence
 {
-    class Program
+    public class Program
     {
-        static void Sequence_function (int n)
-        { 
+        public static void Sequence_function(int n)
+        {
             for (int i = 1; i < n; i++)
             {
-                Console.Write(i+", ");
+                Console.Write(i + ", ");
             }
+
             Console.WriteLine(n);
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-           Console.Write("Please input positive number: ");
-            
-           if (int.TryParse(Console.ReadLine(), out int n))
+            Console.Write("Please input positive number: ");
+
+            if (int.TryParse(Console.ReadLine(), out int n))
             {
                 if (n < 1)
                 {
@@ -32,11 +33,10 @@ namespace Epam.Task1._01_Sequence
                     Sequence_function(n);
                 }
             }
-           else
+            else
             {
                 Console.WriteLine("Input incorrect.");
             }
-                
         }
     }
 }
