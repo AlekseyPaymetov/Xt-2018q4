@@ -31,8 +31,8 @@ namespace Epam.Task05_files._1_backup_system
         private const int BufferSize = 65536;
         private static string watchingPath;
         private static FileSystemWatcher watcher;
-        private static string storagePath = Path.Combine(Environment.SystemDirectory, "MyStorage\\");
-
+        private static string storagePath = Path.Combine(Environment.CurrentDirectory, "MyStorage");
+        
         public static string StoragePath
         {
             get

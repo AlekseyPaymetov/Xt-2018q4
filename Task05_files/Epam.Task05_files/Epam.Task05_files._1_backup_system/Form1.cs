@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,6 +105,18 @@ namespace Epam.Task05_files._1_backup_system
             else
             {
                 infoLabel.Text = "Could not deleted storage.";
+            }
+        }
+
+        private void ShowStorageBu_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(FileStorage.StoragePath))
+            {
+                System.Diagnostics.Process.Start("explorer", FileStorage.StoragePath);
+            }
+            else
+            {
+                infoLabel.Text = "Storage is not exist.";
             }
         }
     }

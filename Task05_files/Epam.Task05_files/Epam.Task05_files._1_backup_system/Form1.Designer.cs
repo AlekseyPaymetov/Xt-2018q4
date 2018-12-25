@@ -39,6 +39,7 @@
             this.infoLabel = new System.Windows.Forms.Label();
             this.deleteStorageBu = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.showStorageBu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // folderTB
             // 
             this.folderTB.Enabled = false;
-            this.folderTB.Location = new System.Drawing.Point(310, 117);
+            this.folderTB.Location = new System.Drawing.Point(310, 108);
             this.folderTB.Name = "folderTB";
             this.folderTB.Size = new System.Drawing.Size(260, 20);
             this.folderTB.TabIndex = 8;
@@ -80,7 +81,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(310, 101);
+            this.label4.Location = new System.Drawing.Point(310, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 9;
@@ -88,7 +89,7 @@
             // 
             // chooseFolderBu
             // 
-            this.chooseFolderBu.Location = new System.Drawing.Point(310, 150);
+            this.chooseFolderBu.Location = new System.Drawing.Point(310, 134);
             this.chooseFolderBu.Name = "chooseFolderBu";
             this.chooseFolderBu.Size = new System.Drawing.Size(100, 50);
             this.chooseFolderBu.TabIndex = 0;
@@ -129,11 +130,22 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // showStorageBu
+            // 
+            this.showStorageBu.Location = new System.Drawing.Point(310, 200);
+            this.showStorageBu.Name = "showStorageBu";
+            this.showStorageBu.Size = new System.Drawing.Size(100, 50);
+            this.showStorageBu.TabIndex = 15;
+            this.showStorageBu.Text = "Show storage";
+            this.showStorageBu.UseVisualStyleBackColor = true;
+            this.showStorageBu.Click += new System.EventHandler(this.ShowStorageBu_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 262);
+            this.Controls.Add(this.showStorageBu);
             this.Controls.Add(this.deleteStorageBu);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.goToDateBu);
@@ -167,6 +179,7 @@
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Button deleteStorageBu;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.Button showStorageBu;
     }
 }
 
