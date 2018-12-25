@@ -12,6 +12,8 @@ namespace Epam.Task05_files._1_backup_system
 {
     public partial class Form1 : Form
     {
+        private bool isWatching = false;
+
         public Form1()
         {
             this.InitializeComponent();
@@ -20,18 +22,15 @@ namespace Epam.Task05_files._1_backup_system
         private void Form1_Load(object sender, EventArgs e)
         {
             var dateNow = DateTime.Now;
-            hoursUD.Value = dateNow.Hour;
-            minutesUP.Value = dateNow.Minute;
-            secondsUD.Value = dateNow.Second;
             folderTB.Text = Properties.Settings.Default.folderPath;
-            StartStopWatchingBu_Click(sender,e);
+            dateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm:ss";
         }
 
         private void ChooseFolderBu_Click(object sender, EventArgs e)
         {
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
-                folderTB.Text = folderBrowserDialog.SelectedPath+"\\";
+                folderTB.Text = folderBrowserDialog.SelectedPath + "\\";
             }
         }
 
@@ -41,15 +40,9 @@ namespace Epam.Task05_files._1_backup_system
             Properties.Settings.Default.Save();
         }
 
-        bool isWatching = false;
-
         private void StartStopWatchingBu_Click(object sender, EventArgs e)
         {
-            //long time = DateTime.Now.ToBinary();
-            //MessageBox.Show(DateTime.Now.ToString());
-            //MessageBox.Show(time.ToString());
-            //MessageBox.Show(DateTime.FromBinary(time).ToString());
-            if (!isWatching)
+            if (!this.isWatching)
             {
                 startStopWatchingBu.Text = "Stop watching";
                 goToDateBu.Enabled = false;
@@ -60,6 +53,7 @@ namespace Epam.Task05_files._1_backup_system
                     infoLabel.Text = "Please enter folder for watching (press \"Choose button\").";
                     return;
                 }
+
                 FileStorage.WatchingPath = folderTB.Text;
                 if (!FileStorage.StartWatching())
                 {
@@ -77,16 +71,31 @@ namespace Epam.Task05_files._1_backup_system
                     infoLabel.Text = "Some problems in work FileStorage class. Please contact the developer.";
                 }
             }
-            //infoLabel.Text = Environment.SystemDirectory;
-            isWatching = !isWatching;
+
+            this.isWatching = !this.isWatching;
         }
 
-        private void goToDateBu_Click(object sender, EventArgs e)
+        private void GoToDateBu_Click(object sender, EventArgs e)
         {
-            infoLabel.Text = Environment.SystemDirectory;
+            if (string.IsNullOrEmpty(folderTB.Text))
+            {
+                infoLabel.Text = "Please select path for watching folder";
+                return;
+            }
+
+            Restore.Date = dateTimePicker.Value;
+            Restore.WatchgerPath = folderTB.Text;
+            if (Restore.DoRestore())
+            {
+                infoLabel.Text = $"{folderTB.Text} was successfully restore for {dateTimePicker.Value}";
+            }
+            else
+            {
+                infoLabel.Text = $"Having some trouble with restore :(";
+            }
         }
 
-        private void deleteStorageBu_Click(object sender, EventArgs e)
+        private void DeleteStorageBu_Click(object sender, EventArgs e)
         {
             if (FileStorage.DeleteStorageFolder())
             {
