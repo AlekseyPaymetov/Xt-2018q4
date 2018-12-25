@@ -102,8 +102,13 @@ namespace Epam.Task05_files._1_backup_system
 
         private static DateTime GetDateTimeFromFolderName(string folderName)
         {
-            int startIndex = folderName.IndexOf(SeparatorForIndex) + 1;
-            int length = folderName.IndexOf(SeparatorForDate) - startIndex;
+            int startIndex = folderName.IndexOf(storagePath);
+            startIndex += storagePath.Length;
+            string tempString = folderName.Substring(startIndex,folderName.Length-startIndex);
+            int tempIndex=tempString.IndexOf(SeparatorForIndex) + 1;
+            startIndex += tempIndex;
+            string startChar = folderName[startIndex].ToString();
+            int length = tempString.IndexOf(SeparatorForDate)-tempIndex;
             if (startIndex < 0 || length < 0)
             {
                 throw new ArgumentException("Problem with storage");

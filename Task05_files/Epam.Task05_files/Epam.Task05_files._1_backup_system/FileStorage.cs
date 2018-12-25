@@ -141,6 +141,14 @@ namespace Epam.Task05_files._1_backup_system
             return tempList;
         }
 
+        private static bool ItIsTxtFile (string fullPath)
+        {
+            if (Directory.Exists(fullPath))
+            {
+                return false ;
+            }
+            return true;
+        }
         private static void SetSetttingsForWatcher()
         {
             watcher = new FileSystemWatcher();
@@ -159,12 +167,78 @@ namespace Epam.Task05_files._1_backup_system
 
         private static void CreateEvent(object source, FileSystemEventArgs e)
         {
-            CreateFolder(e.Name);
+            if (ItIsTxtFile(e.FullPath))
+            {
+                CreateFolder(e.Name);
+            }
         }
 
         private static void RenameEvent(object source, RenamedEventArgs e)
         {
-            RenameFolder(e.OldName, e.Name);
+            if (ItIsTxtFile(e.FullPath))
+            {
+                RenameFolder(e.OldName, e.Name);
+            }
+        }
+
+        private static void DeleteEvent(object source, FileSystemEventArgs e)
+        {
+            if (ItIsTxtFile(e.FullPath))
+            {
+                string fileName = e.Name;
+                string pathInStorage = string.Empty;
+                if (fileName.IndexOf(@"\") < 0)
+                {
+                    pathInStorage = FindNeedFolder(fileName);
+                }
+                else
+                {
+                    string needFolder = GetFullSubPath(fileName);
+                    fileName = GetFileName(fileName);
+                    pathInStorage = needFolder;
+                }
+
+                if (!string.IsNullOrEmpty(pathInStorage))
+                {
+                    WriteToHistoryTxt(pathInStorage, fileName, DeletedEventText);
+                }
+            }
+        }
+
+        private static void ChangeEvent(object source, FileSystemEventArgs e)
+        {
+            if (ItIsTxtFile(e.FullPath))
+            {
+                try
+                {
+                    watcher.EnableRaisingEvents = false;
+                    string fileName = e.Name;
+                    string fullPath = e.FullPath;
+                    string needFolder = string.Empty;
+                    if (fileName.IndexOf(@"\") < 0)
+                    {
+                        needFolder = FindNeedFolder(fileName);
+                        if (string.IsNullOrEmpty(needFolder))
+                        {
+                            CreateFolder(fileName);
+                        }
+                    }
+                    else
+                    {
+                        needFolder = GetFullSubPath(fileName);
+                        if (string.IsNullOrEmpty(needFolder))
+                        {
+                            CreateFolder(fileName);
+                        }
+                    }
+
+                    WriteToTextTxt(Path.Combine(needFolder, TextTxtName), fullPath, true);
+                }
+                finally
+                {
+                    watcher.EnableRaisingEvents = true;
+                }
+            }
         }
 
         private static string GetFullSubPath(string fileName)
@@ -182,60 +256,6 @@ namespace Epam.Task05_files._1_backup_system
             }
 
             return needFolder;
-        }
-
-        private static void DeleteEvent(object source, FileSystemEventArgs e)
-        {
-            string fileName = e.Name;
-            string pathInStorage = string.Empty;
-            if (fileName.IndexOf(@"\") < 0)
-            {
-                pathInStorage = FindNeedFolder(fileName);
-            }
-            else
-            {
-                string needFolder = GetFullSubPath(fileName);
-                fileName = GetFileName(fileName);
-                pathInStorage = needFolder;
-            }
-
-            if (!string.IsNullOrEmpty(pathInStorage))
-            {
-                WriteToHistoryTxt(pathInStorage, fileName, DeletedEventText);
-            }
-        }
-
-        private static void ChangeEvent(object source, FileSystemEventArgs e)
-        {
-            try
-            {
-                watcher.EnableRaisingEvents = false;
-                string fileName = e.Name;
-                string fullPath = e.FullPath;
-                string needFolder = string.Empty;
-                if (fileName.IndexOf(@"\") < 0)
-                {
-                    needFolder = FindNeedFolder(fileName);
-                    if (string.IsNullOrEmpty(needFolder))
-                    {
-                        CreateFolder(fileName);
-                    }
-                }
-                else
-                {
-                    needFolder = GetFullSubPath(fileName);
-                    if (string.IsNullOrEmpty(needFolder))
-                    {
-                        CreateFolder(fileName);
-                    }
-                }
-
-                WriteToTextTxt(Path.Combine(needFolder, TextTxtName), fullPath, true);
-            }
-            finally
-            {
-                watcher.EnableRaisingEvents = true;
-            }
         }
 
         private static void WriteToTextTxt(string pathToTxt, string fromTxt, bool nessanecessarilyWrite = false)
