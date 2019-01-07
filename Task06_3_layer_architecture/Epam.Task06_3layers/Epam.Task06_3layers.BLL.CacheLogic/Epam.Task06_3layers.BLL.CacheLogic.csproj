@@ -49,9 +49,9 @@
       <Project>{569BE4EC-9625-40AB-A253-E7D2A4516FA2}</Project>
       <Name>Epam.Task06_3layers.BLL.LogicInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Epam.Task06_3layers.DalInterface\Epam.Task06_3layers.DalInterface.csproj">
+    <ProjectReference Include="..\Epam.Task06_3layers.DalInterface\Epam.Task06_3layers.AbstractTxtDao.csproj">
       <Project>{1DD6B3A2-813F-4735-BD19-EC841016E7CC}</Project>
-      <Name>Epam.Task06_3layers.DalInterface</Name>
+      <Name>Epam.Task06_3layers.AbstractTxtDao</Name>
     </ProjectReference>
     <ProjectReference Include="..\Epam.Task06_3layers.UsersDao\Epam.Task06_3layers.TxtDal.csproj">
       <Project>{783EEAE4-B710-4DC0-A05B-F5FFBA325A99}</Project>

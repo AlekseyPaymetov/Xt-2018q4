@@ -116,7 +116,7 @@ namespace Epam.Task06_3layers.UserInterface
 
         private void ErrorMessage()
         {
-            Console.WriteLine("Incorrect input. Please try again.");
+            Console.WriteLine($"{Environment.NewLine}Incorrect input. Please try again.");
         }
 
         private void ShowMenu()
@@ -143,7 +143,7 @@ namespace Epam.Task06_3layers.UserInterface
 
         private bool UseCache()
         {
-            Console.WriteLine("Use Cache? (y/n): ");
+            Console.Write("Use Cache? (y/n): ");
             char inputSymbol = Console.ReadKey().KeyChar;
             if (inputSymbol == 'y' || inputSymbol == 'Y')
             {

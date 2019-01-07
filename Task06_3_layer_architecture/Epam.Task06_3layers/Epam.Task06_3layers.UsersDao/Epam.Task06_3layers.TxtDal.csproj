@@ -45,9 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Epam.Task06_3layers.DalInterface\Epam.Task06_3layers.DalInterface.csproj">
+    <ProjectReference Include="..\Epam.Task06_3layers.DalInterface\Epam.Task06_3layers.AbstractTxtDao.csproj">
       <Project>{1DD6B3A2-813F-4735-BD19-EC841016E7CC}</Project>
-      <Name>Epam.Task06_3layers.DalInterface</Name>
+      <Name>Epam.Task06_3layers.AbstractTxtDao</Name>
     </ProjectReference>
     <ProjectReference Include="..\Epam.Task06_3layers.Users\Epam.Task06_3layers.Entities.csproj">
       <Project>{C8594BDA-261C-4564-81AA-2EF9015F5B73}</Project>

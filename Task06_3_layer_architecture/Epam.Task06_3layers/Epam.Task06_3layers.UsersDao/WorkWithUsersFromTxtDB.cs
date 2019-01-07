@@ -4,21 +4,20 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Epam.Task06_3layers.DalInterface;
+using Epam.Task06_3layers.AbstractTxtDao;
 using Epam.Task06_3layers.Entities;
 
 namespace Epam.Task06_3layers.TxtDal
 {
-    public class WorkWithUsersFromTxtDB : Idal<User>
+    public class WorkWithUsersFromTxtDB : AbstractTxtDao<User>
     {
-        private static string directoryToTxtDB = "txtDB";
-        private static string txtDBName = "txtDB.txt";
+        protected override string DirectoryToWork
+        { get; } = "txtDB";
 
-        private static string fullDirectoryToTxtDB = Path.Combine(Directory.GetCurrentDirectory(), directoryToTxtDB);
+        protected override string TxtNameToWork
+        { get; } = "txtDB.txt";
 
-        private static string fullPathToTxtDB = Path.Combine(fullDirectoryToTxtDB, txtDBName);
-
-        public bool Add(User user)
+        public override bool Add(User user)
         {
             if (!this.CanWork())
             {
@@ -33,7 +32,7 @@ namespace Epam.Task06_3layers.TxtDal
             try
             {
                 string[] userAsStrings = { user.Id.ToString(), user.Name, user.DateOfBirth.ToLongDateString() };
-                File.AppendAllLines(fullPathToTxtDB, userAsStrings);
+                File.AppendAllLines(this.FullPathToTxtDB, userAsStrings);
             }
             catch
             {
@@ -43,7 +42,7 @@ namespace Epam.Task06_3layers.TxtDal
             return true;
         }
 
-        public bool Delete(int id)
+        public override bool Delete(int id)
         {
             if (!this.IdExist(id))
             {
@@ -73,7 +72,7 @@ namespace Epam.Task06_3layers.TxtDal
 
             try
             {
-                File.WriteAllLines(fullPathToTxtDB, subAllData);
+                File.WriteAllLines(this.FullPathToTxtDB, subAllData);
             }
             catch
             {
@@ -83,7 +82,7 @@ namespace Epam.Task06_3layers.TxtDal
             return true;
         }
 
-        public IEnumerable<User> GetAll()
+        public override IEnumerable<User> GetAll()
         {
             if (!this.CanWork())
             {
@@ -96,17 +95,17 @@ namespace Epam.Task06_3layers.TxtDal
 
         private bool CanWork()
         {
-            if (File.Exists(fullPathToTxtDB))
+            if (File.Exists(this.FullPathToTxtDB))
             {
                 return true;
             }
             else
             {
-                if (Directory.Exists(fullDirectoryToTxtDB))
+                if (Directory.Exists(this.FullDirectoryToTxtDB))
                 {
                     try
                     {
-                        var temp = File.Create(fullPathToTxtDB);
+                        var temp = File.Create(FullPathToTxtDB);
                         temp.Close();
                         return true;
                     }
@@ -119,8 +118,8 @@ namespace Epam.Task06_3layers.TxtDal
                 {
                     try
                     {
-                        Directory.CreateDirectory(fullDirectoryToTxtDB);
-                        var temp = File.Create(fullPathToTxtDB);
+                        Directory.CreateDirectory(this.FullDirectoryToTxtDB);
+                        var temp = File.Create(FullPathToTxtDB);
                         temp.Close();
                         return true;
                     }
@@ -159,7 +158,7 @@ namespace Epam.Task06_3layers.TxtDal
         {
             try
             {
-                string[] allData = File.ReadAllLines(fullPathToTxtDB);
+                string[] allData = File.ReadAllLines(FullPathToTxtDB);
                 return allData;
             }
             catch
