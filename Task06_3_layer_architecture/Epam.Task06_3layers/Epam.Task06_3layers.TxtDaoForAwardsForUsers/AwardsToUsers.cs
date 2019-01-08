@@ -7,35 +7,35 @@ using System.Threading.Tasks;
 using Epam.Task06_3layers.AbstractTxtDao;
 using Epam.Task06_3layers.Entities;
 
-namespace Epam.Task06_3layers.TxtDal
+namespace Epam.Task06_3layers.TxtDaoForAwardsForUsers
 {
-    public class WorkWithUsersFromTxtDB : AbstractTxtDao<User>
+    public class AwardsToUsers : AbstractTxtDao<AwardToUser>
     {
         protected override string DirectoryToWork
         { get; } = "txtDB";
 
         protected override string TxtNameToWork
-        { get; } = "txtDB.txt";
+        { get; } = "AwardsAndUsers.txt";
 
         protected override int IdInEveryStringNumber
         { get; } = 3;
 
-        public override bool Add(User user)
+        public override bool Add(AwardToUser awardToUser)
         {
             if (!this.CanWork())
             {
                 return false;
             }
 
-            if (this.IdExist(user.Id))
+            if (this.IdExist(awardToUser.Id))
             {
                 return false;
             }
 
             try
             {
-                string[] userAsStrings = { user.Id.ToString(), user.Name, user.DateOfBirth.ToLongDateString() };
-                File.AppendAllLines(this.FullPathToTxtDB, userAsStrings);
+                string[] awardsAndUsersAsStrings = { awardToUser.Id.ToString(), awardToUser.IdAward.ToString(), awardToUser.IdUser.ToString() };
+                File.AppendAllLines(this.FullPathToTxtDB, awardsAndUsersAsStrings);
             }
             catch
             {
@@ -86,7 +86,7 @@ namespace Epam.Task06_3layers.TxtDal
             return true;
         }
 
-        public override IEnumerable<User> GetAll()
+        public override IEnumerable<AwardToUser> GetAll()
         {
             if (!this.CanWork())
             {
@@ -94,22 +94,22 @@ namespace Epam.Task06_3layers.TxtDal
             }
 
             string[] allData = this.GetAllDataFromTxt();
-            return this.UsersFromStrings(allData);
+            return this.AwardsAndUsersFromStrings(allData);
         }
 
-        private List<User> UsersFromStrings(string[] allData)
+        private List<AwardToUser> AwardsAndUsersFromStrings(string[] allData)
         {
             if (allData.Length % this.IdInEveryStringNumber != 0)
             {
                 throw new ArgumentException("Wrong fields in DB");
             }
 
-            List<User> allUsers = new List<User>();
+            List<AwardToUser> allAwardsAndUsers = new List<AwardToUser>();
             for (int i = 0; i < allData.Length; i += this.IdInEveryStringNumber)
             {
-                if (int.TryParse(allData[i], out int id) && DateTime.TryParse(allData[i + 2], out DateTime someDate))
+                if (int.TryParse(allData[i], out int id) && int.TryParse(allData[i + 1], out int idAward) && int.TryParse(allData[i + 2], out int idUser))
                 {
-                    allUsers.Add(new User(id, allData[i + 1], someDate));
+                    allAwardsAndUsers.Add(new AwardToUser(id, idAward, idUser));
                 }
                 else
                 {
@@ -117,7 +117,7 @@ namespace Epam.Task06_3layers.TxtDal
                 }
             }
 
-            return allUsers;
+            return allAwardsAndUsers;
         }
     }
 }

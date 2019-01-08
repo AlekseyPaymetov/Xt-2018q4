@@ -31,7 +31,7 @@ namespace Epam.Task06_3layers.Entities
 
         public override string ToString()
         {
-            return $"Id: {this.Id}{Environment.NewLine}Name: {this.Name}{Environment.NewLine}Age: {this.Age}{Environment.NewLine}Date of birth: {this.DateOfBirth.ToShortDateString()}{Environment.NewLine}";
+            return $"Id:{this.Id}{Environment.NewLine}Name: {this.Name}{Environment.NewLine}Age: {this.Age}{Environment.NewLine}Date of birth: {this.DateOfBirth.ToShortDateString()}";
         }
 
         private int CalcYears(DateTime time)

@@ -4,31 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Epam.Task06_3layers.AbstractTxtDao;
-using Epam.Task06_3layers.BLL.LogicInterface;
+using Epam.Task06_3layers.BLL.AwardLogicInterface;
+using Epam.Task06_3layers.BLL.AwardToUserLogicInterface;
 using Epam.Task06_3layers.Entities;
-using Epam.Task06_3layers.TxtDal;
+using Epam.Task06_3layers.TxtDaoForAwardsForUsers;
 
-namespace Epam.Task06_3layers.BLL.Logic
+namespace Epam.Task06_3layers.BLL_AwardToUserLogic
 {
-    public class UserLogic : IBllUserLogic<User>
+    public class AwardToUserLogic : IBllAwardToUserLogic<AwardToUser>
     {
-        private AbstractTxtDao<User> txtDao = new WorkWithUsersFromTxtDB();
-        private List<User> cacheList = new List<User>();
+        private AbstractTxtDao<AwardToUser> txtDao = new AwardsToUsers();
+        private List<AwardToUser> cacheList = new List<AwardToUser>();
 
-        public UserLogic()
+        public AwardToUserLogic()
         {
             this.Initialization();
         }
 
-        public User Create(int id, string name, DateTime dateOfBirth)
-        {
-            return new User(id, name, dateOfBirth);
-        }
+        public AwardToUser Create(int id, int idAward, int idUser)
+            => new AwardToUser(id, idAward, idUser);
 
-        public bool Add(User user)
+        public bool Add(AwardToUser awardToUser)
         {
             this.DeleteCache();
-            return this.txtDao.Add(user);
+            return this.txtDao.Add(awardToUser);
         }
 
         public bool Delete(int id)
@@ -37,7 +36,7 @@ namespace Epam.Task06_3layers.BLL.Logic
             return this.txtDao.Delete(id);
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<AwardToUser> GetAll()
         {
             if (this.cacheList.Count == 0)
             {

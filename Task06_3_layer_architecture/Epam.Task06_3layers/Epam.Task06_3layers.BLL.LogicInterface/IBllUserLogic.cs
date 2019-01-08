@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task06_3layers.BLL.LogicInterface
 {
-    public interface IBllLogic<T>
+    public interface IBllUserLogic<T>
     {
         T Create(int id, string name, DateTime dateOfBirt);
 

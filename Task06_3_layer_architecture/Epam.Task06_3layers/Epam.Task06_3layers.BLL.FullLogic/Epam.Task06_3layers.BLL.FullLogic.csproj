@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4B297D43-3EEA-4F3A-8215-6BEA72111EF4}</ProjectGuid>
+    <ProjectGuid>{B6A4F2AB-4069-4145-AD3A-B785A04373D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Epam.Task06_3layers.UserInterface</RootNamespace>
-    <AssemblyName>Epam.Task06_3layers.UserInterface</AssemblyName>
+    <RootNamespace>Epam.Task06_3layers.BLL.FullLogic</RootNamespace>
+    <AssemblyName>Epam.Task06_3layers.BLL.FullLogic</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,13 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleUI.cs" />
+    <Compile Include="FullLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Epam.Task06_3layers.BLL.FullLogic\Epam.Task06_3layers.BLL.FullLogic.csproj">
-      <Project>{B6A4F2AB-4069-4145-AD3A-B785A04373D0}</Project>
-      <Name>Epam.Task06_3layers.BLL.FullLogic</Name>
+    <ProjectReference Include="..\Epam.Task06_3layers.BLL.AwardLogicInterface\Epam.Task06_3layers.BLL.AwardLogicInterface.csproj">
+      <Project>{E88101A6-0F07-4989-A8EA-9265DB26528B}</Project>
+      <Name>Epam.Task06_3layers.BLL.AwardLogicInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.Task06_3layers.BLL.AwardLogic\Epam.Task06_3layers.BLL_AwardLogic.csproj">
+      <Project>{2A33C0DB-9AFF-460E-ACF9-7D0355F185A6}</Project>
+      <Name>Epam.Task06_3layers.BLL_AwardLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.Task06_3layers.BLL.AwardToUserLogicInterface\Epam.Task06_3layers.BLL.AwardToUserLogicInterface.csproj">
+      <Project>{EBCDFE77-828E-4F38-9E1B-60CAAE3BE6B5}</Project>
+      <Name>Epam.Task06_3layers.BLL.AwardToUserLogicInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.Task06_3layers.BLL.AwardToUserLogic\Epam.Task06_3layers.BLL.AwardToUserLogic.csproj">
+      <Project>{7ADEE167-86CF-4517-B42B-7116931CB029}</Project>
+      <Name>Epam.Task06_3layers.BLL.AwardToUserLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Epam.Task06_3layers.BLL.LogicInterface\Epam.Task06_3layers.BLL.UserLogicInterface.csproj">
       <Project>{569BE4EC-9625-40AB-A253-E7D2A4516FA2}</Project>
@@ -56,10 +68,6 @@
     <ProjectReference Include="..\Epam.Task06_3layers.BLL.Logic\Epam.Task06_3layers.BLL.UserLogic.csproj">
       <Project>{03ADAACD-7E60-4307-9DD8-A03F95DC4F17}</Project>
       <Name>Epam.Task06_3layers.BLL.UserLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Epam.Task06_3layers.PLInterface\Epam.Task06_3layers.PLInterface.csproj">
-      <Project>{BB852C9D-B5FD-4639-B587-C763CC073DDC}</Project>
-      <Name>Epam.Task06_3layers.PLInterface</Name>
     </ProjectReference>
     <ProjectReference Include="..\Epam.Task06_3layers.Users\Epam.Task06_3layers.Entities.csproj">
       <Project>{C8594BDA-261C-4564-81AA-2EF9015F5B73}</Project>
