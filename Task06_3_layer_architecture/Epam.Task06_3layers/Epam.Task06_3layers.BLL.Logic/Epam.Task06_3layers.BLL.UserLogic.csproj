@@ -53,9 +53,9 @@
       <Project>{1DD6B3A2-813F-4735-BD19-EC841016E7CC}</Project>
       <Name>Epam.Task06_3layers.AbstractTxtDao</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Epam.Task06_3layers.UsersDao\Epam.Task06_3layers.TxtDao.csproj">
+    <ProjectReference Include="..\Epam.Task06_3layers.UsersDao\Epam.Task06_3layers.TxtDaoForUsers.csproj">
       <Project>{783EEAE4-B710-4DC0-A05B-F5FFBA325A99}</Project>
-      <Name>Epam.Task06_3layers.TxtDao</Name>
+      <Name>Epam.Task06_3layers.TxtDaoForUsers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Epam.Task06_3layers.Users\Epam.Task06_3layers.Entities.csproj">
       <Project>{C8594BDA-261C-4564-81AA-2EF9015F5B73}</Project>

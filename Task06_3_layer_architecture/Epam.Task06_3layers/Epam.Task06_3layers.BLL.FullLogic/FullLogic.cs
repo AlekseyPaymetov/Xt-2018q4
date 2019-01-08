@@ -152,7 +152,7 @@ namespace Epam.Task06_3layers.BLL.FullLogic
                         {
                             if (award.Id == idAward)
                             {
-                                usersInfo.Add("Has award: " + award.Title);
+                                usersInfo.Add($"Has award id: {award.Id} title: {award.Title}");
                             }
                         }
                     }

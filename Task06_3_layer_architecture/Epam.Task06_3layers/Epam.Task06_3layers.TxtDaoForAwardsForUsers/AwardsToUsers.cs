@@ -27,7 +27,7 @@ namespace Epam.Task06_3layers.TxtDaoForAwardsForUsers
                 return false;
             }
 
-            if (this.IdExist(awardToUser.Id))
+            if (this.IdsExists(awardToUser))
             {
                 return false;
             }
@@ -118,6 +118,41 @@ namespace Epam.Task06_3layers.TxtDaoForAwardsForUsers
             }
 
             return allAwardsAndUsers;
+        }
+
+        private bool IdsExists(AwardToUser awardToUser)
+        {
+            string[] allData = this.GetAllDataFromTxt();
+            if (allData.Length == 0)
+            {
+                return false;
+            }
+
+            if (allData.Length % this.IdInEveryStringNumber != 0)
+            {
+                throw new ArgumentException("Wrong fields in DB");
+            }
+
+            for (int i = 0, j = 0; i < allData.Length; i += this.IdInEveryStringNumber, j++)
+            {
+                int idAward;
+                int idUser;
+                if (int.TryParse(allData[i + 1], out idAward) && int.TryParse(allData[i + 2], out idUser))
+                {
+                    if (idAward == awardToUser.IdAward && idUser == awardToUser.IdUser)
+                    {
+                        return true;
+                    }
+
+                    continue;
+                }
+                else
+                {
+                    throw new ArgumentException("Wrong fields in DB");
+                }
+            }
+
+            return false;
         }
     }
 }

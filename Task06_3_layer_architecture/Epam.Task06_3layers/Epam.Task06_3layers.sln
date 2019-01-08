@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{0BC486AC-0DC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{CD90C694-798C-40BD-BC31-D26EA9A1992E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task06_3layers.TxtDao", "Epam.Task06_3layers.UsersDao\Epam.Task06_3layers.TxtDao.csproj", "{783EEAE4-B710-4DC0-A05B-F5FFBA325A99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task06_3layers.TxtDaoForUsers", "Epam.Task06_3layers.UsersDao\Epam.Task06_3layers.TxtDaoForUsers.csproj", "{783EEAE4-B710-4DC0-A05B-F5FFBA325A99}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task06_3layers.AbstractTxtDao", "Epam.Task06_3layers.DalInterface\Epam.Task06_3layers.AbstractTxtDao.csproj", "{1DD6B3A2-813F-4735-BD19-EC841016E7CC}"
 EndProject
@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task06_3layers.BLL.Use
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task06_3layers.PLInterface", "Epam.Task06_3layers.PLInterface\Epam.Task06_3layers.PLInterface.csproj", "{BB852C9D-B5FD-4639-B587-C763CC073DDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task06_3layers.TxtDaoForAward", "Epam.Task06_3layers.TxtDalForAward\Epam.Task06_3layers.TxtDaoForAward.csproj", "{9F96FA16-027B-4EC1-AB44-20F96CEBA0FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task06_3layers.TxtDaoForAwards", "Epam.Task06_3layers.TxtDalForAward\Epam.Task06_3layers.TxtDaoForAwards.csproj", "{9F96FA16-027B-4EC1-AB44-20F96CEBA0FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task06_3layers.TxtDaoForAwardsToUsers", "Epam.Task06_3layers.TxtDaoForAwardsForUsers\Epam.Task06_3layers.TxtDaoForAwardsToUsers.csproj", "{BA0C557A-D236-49C2-86BB-151A47B2EB93}"
 EndProject

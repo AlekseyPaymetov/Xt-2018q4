@@ -53,9 +53,9 @@
       <Project>{1DD6B3A2-813F-4735-BD19-EC841016E7CC}</Project>
       <Name>Epam.Task06_3layers.AbstractTxtDao</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Epam.Task06_3layers.TxtDalForAward\Epam.Task06_3layers.TxtDaoForAward.csproj">
+    <ProjectReference Include="..\Epam.Task06_3layers.TxtDalForAward\Epam.Task06_3layers.TxtDaoForAwards.csproj">
       <Project>{9F96FA16-027B-4EC1-AB44-20F96CEBA0FD}</Project>
-      <Name>Epam.Task06_3layers.TxtDaoForAward</Name>
+      <Name>Epam.Task06_3layers.TxtDaoForAwards</Name>
     </ProjectReference>
     <ProjectReference Include="..\Epam.Task06_3layers.Users\Epam.Task06_3layers.Entities.csproj">
       <Project>{C8594BDA-261C-4564-81AA-2EF9015F5B73}</Project>
