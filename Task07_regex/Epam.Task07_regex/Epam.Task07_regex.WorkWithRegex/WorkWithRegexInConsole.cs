@@ -7,17 +7,20 @@ namespace Epam.Task07_regex.WorkWithRegex
     {
         private Regex regex;
 
-        public WorkWithRegexInConsole(int numberOfTask, string regex)
+        public WorkWithRegexInConsole(int numberOfTask, string regex, bool askInput = true)
         {
             this.regex = new Regex(@regex);
             this.SetExampleString(numberOfTask);
-            this.SetInputString();
+            if (askInput)
+            {
+                this.SetInputString();
+            }
         }
 
         public string InputString
         {
             get;
-            private set;
+            set;
         }
             = string.Empty;
 

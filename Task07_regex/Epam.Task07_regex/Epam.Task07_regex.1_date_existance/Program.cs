@@ -10,9 +10,11 @@ namespace Epam.Task07_regex._1_date_existance
 {
     public class Program
     {
+        private static string reg = @"\d{2}-\d{2}-\d{4}";
+
         public static void Main(string[] args)
         {
-            WorkWithRegexInConsole workWithRegex = new WorkWithRegexInConsole(1, @"\d{2}-\d{2}-\d{4}");
+            WorkWithRegexInConsole workWithRegex = new WorkWithRegexInConsole(1, reg);
             MatchCollection matches = workWithRegex.GetAllMatches();
             string find = "no ";
             if (matches.Count > 0)
