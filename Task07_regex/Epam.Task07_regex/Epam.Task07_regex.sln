@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07_regex.4_number_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07_regex.3_email_finder", "Epam.Task07_regex.3_email_finder\Epam.Task07_regex.3_email_finder.csproj", "{551ABB67-8E54-4083-95EF-045C4D02F36F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07_regex.5_time_counter", "Epam.Task07_regex.5_time_counter\Epam.Task07_regex.5_time_counter.csproj", "{8C96E81D-3A98-4904-BDB8-6BA1F1BDC36A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{551ABB67-8E54-4083-95EF-045C4D02F36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{551ABB67-8E54-4083-95EF-045C4D02F36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{551ABB67-8E54-4083-95EF-045C4D02F36F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C96E81D-3A98-4904-BDB8-6BA1F1BDC36A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C96E81D-3A98-4904-BDB8-6BA1F1BDC36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C96E81D-3A98-4904-BDB8-6BA1F1BDC36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C96E81D-3A98-4904-BDB8-6BA1F1BDC36A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{E73829E3-32E5-4058-905B-D2612B74B158} = {18CA6F43-5196-4CAA-ACA6-D998CC6378D3}
 		{CC50E22A-0F7A-4875-AB35-1F82B2966176} = {18CA6F43-5196-4CAA-ACA6-D998CC6378D3}
 		{551ABB67-8E54-4083-95EF-045C4D02F36F} = {18CA6F43-5196-4CAA-ACA6-D998CC6378D3}
+		{8C96E81D-3A98-4904-BDB8-6BA1F1BDC36A} = {18CA6F43-5196-4CAA-ACA6-D998CC6378D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FEE84DD3-0A23-42C0-BA2A-1262B83E19EE}
