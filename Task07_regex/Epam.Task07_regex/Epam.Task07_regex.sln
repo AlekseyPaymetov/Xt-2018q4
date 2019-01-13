@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{D84C73CE-171
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07_regex.2_html_replacer", "Epam.Task07_regex.2_html_replacer\Epam.Task07_regex.2_html_replacer.csproj", "{E73829E3-32E5-4058-905B-D2612B74B158}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07_regex.4_number_validator", "Epam.Task07_regex.4_number_validator\Epam.Task07_regex.4_number_validator.csproj", "{CC50E22A-0F7A-4875-AB35-1F82B2966176}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{E73829E3-32E5-4058-905B-D2612B74B158}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E73829E3-32E5-4058-905B-D2612B74B158}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E73829E3-32E5-4058-905B-D2612B74B158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC50E22A-0F7A-4875-AB35-1F82B2966176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC50E22A-0F7A-4875-AB35-1F82B2966176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC50E22A-0F7A-4875-AB35-1F82B2966176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC50E22A-0F7A-4875-AB35-1F82B2966176}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{8F8F2D3D-A484-4450-BE10-B5343A98A6C3} = {D84C73CE-1717-4835-8F74-C4E5F767D6A7}
 		{4A07E4A5-1DBA-444A-ABCB-2136952C6815} = {18CA6F43-5196-4CAA-ACA6-D998CC6378D3}
 		{E73829E3-32E5-4058-905B-D2612B74B158} = {18CA6F43-5196-4CAA-ACA6-D998CC6378D3}
+		{CC50E22A-0F7A-4875-AB35-1F82B2966176} = {18CA6F43-5196-4CAA-ACA6-D998CC6378D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FEE84DD3-0A23-42C0-BA2A-1262B83E19EE}
