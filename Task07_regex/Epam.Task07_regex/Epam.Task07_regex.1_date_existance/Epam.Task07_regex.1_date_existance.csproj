@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A582976A-9EA7-49E5-BEDE-FF3EEDCB53F4}</ProjectGuid>
+    <ProjectGuid>{4A07E4A5-1DBA-444A-ABCB-2136952C6815}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Epam.Task07_regex._1_date_existance</RootNamespace>
     <AssemblyName>Epam.Task07_regex.1_date_existance</AssemblyName>
@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epam.Task07_regex.WorkWithRegex\Epam.Task07_regex.WorkWithRegex.csproj">
+      <Project>{8F8F2D3D-A484-4450-BE10-B5343A98A6C3}</Project>
+      <Name>Epam.Task07_regex.WorkWithRegex</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

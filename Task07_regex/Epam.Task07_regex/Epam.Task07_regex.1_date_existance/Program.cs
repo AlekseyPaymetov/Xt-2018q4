@@ -4,58 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Epam.Task07_regex.WorkWithRegex;
 
 namespace Epam.Task07_regex._1_date_existance
 {
     public class Program
     {
-        private static string inputString = string.Empty;
-        private static Regex regex = new Regex(@"\d{2}-\d{2}-\d{4}");
-
         public static void Main(string[] args)
         {
-            Console.WriteLine("Please input a sting:");
-            inputString = Console.ReadLine();
-            FindRegexAndShowResultOnConsole();
-
-            Console.WriteLine();
-            Console.WriteLine("For example in task: ");
-            inputString = "2020 год наступит 01-01-2020";
-            FindRegexAndShowResultOnConsole();
-        }
-
-        private static void ShowResult(bool find = false)
-        {
-            if (find)
-            {
-                Console.WriteLine($"Input string \"{inputString}\" has date.");
-            }
-            else
-            {
-                Console.WriteLine($"Input string \"{inputString}\" has not date.");
-            }
-        }
-
-        private static void FindRegexAndShowResultOnConsole()
-        {
-            MatchCollection matches = regex.Matches(inputString);
+            WorkWithRegexInConsole workWithRegex = new WorkWithRegexInConsole(1, @"\d{2}-\d{2}-\d{4}");
+            MatchCollection matches = workWithRegex.GetAllMatches();
+            string find = "no ";
             if (matches.Count > 0)
             {
                 foreach (var item in matches)
                 {
-                    if (DateTime.TryParse(item.ToString(), out DateTime someTempDate))
+                    if (DateTime.TryParse(item.ToString(), out DateTime notUsedDate))
                     {
-                        ShowResult(true);
-                        return;
+                        find = string.Empty;
+                        break;
                     }
                 }
+            }
 
-                ShowResult();
-            }
-            else
+            Console.WriteLine($"Input string \"{workWithRegex.InputString}\" has {find}date.");
+
+            find = "no ";
+            matches = workWithRegex.GetAllMatchesInExample();
+            if (matches.Count > 0)
             {
-                ShowResult();
+                foreach (var item in matches)
+                {
+                    if (DateTime.TryParse(item.ToString(), out DateTime notUsedDate))
+                    {
+                        find = string.Empty;
+                        break;
+                    }
+                }
             }
+
+            Console.WriteLine($"Example string \"{workWithRegex.ExampleString}\" has {find}date.");
         }
     }
 }
