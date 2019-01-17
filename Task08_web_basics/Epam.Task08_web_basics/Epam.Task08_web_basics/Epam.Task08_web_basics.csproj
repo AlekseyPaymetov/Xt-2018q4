@@ -68,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="8_1_List_menu.html" />
+    <Content Include="8_2_Registration_form.html" />
     <Content Include="CSS\8_1.css" />
+    <Content Include="CSS\8_2.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

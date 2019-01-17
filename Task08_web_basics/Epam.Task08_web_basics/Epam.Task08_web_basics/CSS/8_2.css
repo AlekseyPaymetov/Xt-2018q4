@@ -1,0 +1,46 @@
+﻿form {
+    width: 550px;
+    border: 1px solid #0075b2;
+    background-color: #0690cf;
+    color: white;
+    font-family: Verdana;
+    line-height: 1.5em;
+    font-stretch: ultra-condensed;
+}
+
+hr {
+    color: white;
+}
+
+h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+   display: inline-block;
+   margin-left: 30px;
+   padding: 20px 0px;
+}
+
+.e-mail {
+    width: 434px;
+}
+
+.pas {
+    width: 200px;
+}
+
+input {
+    height: 20px;
+    width: 100%;
+}
+
+.submitBu {
+    width: 112px;
+    height: 36px;
+    border: none;
+    background-color: #ffdf7f;
+    font-weight: 700;
+}
+
