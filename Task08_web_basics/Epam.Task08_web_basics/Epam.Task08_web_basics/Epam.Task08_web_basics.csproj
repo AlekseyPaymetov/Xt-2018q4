@@ -71,10 +71,12 @@
     <Content Include="8_2_Registration_form.html" />
     <Content Include="8_3_Dropdown_menu.html" />
     <Content Include="8_4_Pointing_block.html" />
+    <Content Include="8_4_Pointing_block_v2.html" />
     <Content Include="CSS\8_1.css" />
     <Content Include="CSS\8_2.css" />
     <Content Include="CSS\8_3.css" />
     <Content Include="CSS\8_4.css" />
+    <Content Include="CSS\8_4_v2.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

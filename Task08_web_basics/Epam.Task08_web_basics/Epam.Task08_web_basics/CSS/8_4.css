@@ -25,18 +25,18 @@
     border: 0 solid transparent;
 }
 
-    #content:after {
-        top: -104px;
-        margin-left: -37px;
-        border-bottom-color: #88b7d5;
-        border-width: 52px;
-    }
+#content:after {
+    top: -104px;
+    margin-left: -37px;
+    border-bottom-color: #88b7d5;
+    border-width: 52px;
+}
 
-    #content:before {
-        top: -116px;
-        border-bottom-color: #c2e1f5;
-        border-width: 58px;
-    }
+#content:before {
+    top: -116px;
+    border-bottom-color: #c2e1f5;
+    border-width: 58px;
+}
 
 
 .inMiddle {

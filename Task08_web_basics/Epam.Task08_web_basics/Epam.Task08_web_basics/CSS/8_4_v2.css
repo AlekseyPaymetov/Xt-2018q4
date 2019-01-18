@@ -1,0 +1,44 @@
+﻿body {
+    background-color:black;
+}
+
+#containerForTriangle {
+    width: 60px;
+    height: 60px;
+    margin: -20px auto auto auto;
+    position: relative;
+}
+
+#innerTriangle {
+    position: absolute;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border: 30px solid transparent;
+    border-bottom: 30px solid #88b7d5;
+    margin: auto;
+}
+
+#triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 30px solid transparent;
+    border-bottom: 30px solid #c2e1f5;
+    margin: auto;
+}
+
+#content {
+    width: 100%;
+    min-height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #88b7d5;
+    border: 5px solid #c2e1f5;
+}
+
+span {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
