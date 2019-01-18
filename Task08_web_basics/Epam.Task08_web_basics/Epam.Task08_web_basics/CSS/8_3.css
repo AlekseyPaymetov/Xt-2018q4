@@ -1,0 +1,44 @@
+﻿/*Стиль для всех списков ul*/
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    float: left;
+    box-shadow: 0 0 5px 2px grey;
+    /*display: inline-block;*/
+}
+
+/* Стиль для всех записей li*/
+.topUl li {
+    float: left;
+    position: relative;
+}
+
+/*Стиль для верхнего уровня меню*/
+.topUl {
+}
+
+/* Стиль для записей li верхнего уровня*/
+/*.topUl > li {
+        margin-left: 20px;
+}*/
+
+.topUl li ul {
+        display: none;
+        position: absolute;
+        width: 100px;
+}
+
+.topUl li:hover ul {
+        display: block;
+    }
+
+a{
+    color:blue;
+    text-decoration: underline;
+}
+
+.topUl li a:hover {
+    color: black;
+}
