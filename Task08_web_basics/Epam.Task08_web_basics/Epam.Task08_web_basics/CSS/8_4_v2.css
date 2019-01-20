@@ -1,5 +1,7 @@
 ﻿body {
-    background-color:black;
+    background-color: black;
+    padding: 10px;
+    margin: 0;
 }
 
 #containerForTriangle {
@@ -29,6 +31,7 @@
 }
 
 #content {
+    box-sizing: border-box;
     width: 100%;
     min-height: 100px;
     line-height: 100px;

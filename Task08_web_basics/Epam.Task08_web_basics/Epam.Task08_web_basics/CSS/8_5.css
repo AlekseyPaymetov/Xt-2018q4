@@ -1,0 +1,74 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    
+    background-color: #666666;
+}
+
+section {
+    width: 672px;
+    height: 176px;
+    border-radius: 6px;
+    margin: 10px auto 10px auto;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.item {
+    box-sizing: border-box;
+    float: left;
+    width: 224px;
+    height: 160px;
+    margin-top: 8px;
+
+}
+
+.item.middle {
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+}
+
+h3 {
+    font-size: 16px;
+    color: #f56332;
+    margin: 10px 0 10px 0;
+}
+
+.moreBu {
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+    box-shadow: none;
+    border: 0;
+    background-color: #f56332;
+    color: #ffffff;
+}
+
+.img {
+    width: 112px;
+    height: 68px;
+    margin: 0px auto 0px auto;
+    background: url('../img/sprite8_5_v2.jpg') no-repeat;
+}
+
+#networkImg {
+    background-position: 0 0px;
+}
+
+#cloudImg {
+    background-position: 0 -68px;
+}
+
+#dbImg {
+    background-position: 0 -138px;
+}
+
+.moreBu:hover {
+    cursor: pointer;
+}
+
+section::after {
+    content:'';
+    display: block;
+    clear: both;
+}
