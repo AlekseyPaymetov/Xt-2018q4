@@ -1,0 +1,24 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    background-color: #008b66;
+}
+
+div {
+    position: relative;
+}
+
+section {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #dfe6e1;
+}
