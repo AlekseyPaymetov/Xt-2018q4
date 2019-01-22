@@ -76,6 +76,7 @@
     <Content Include="8_6_Equalizer.html" />
     <Content Include="8_7_Header.html" />
     <Content Include="8_8_Article.html" />
+    <Content Include="8_9_Step_counter.html" />
     <Content Include="CSS\8_1.css" />
     <Content Include="CSS\8_2.css" />
     <Content Include="CSS\8_3.css" />
@@ -85,6 +86,7 @@
     <Content Include="CSS\8_6.css" />
     <Content Include="CSS\8_7.css" />
     <Content Include="CSS\8_8.css" />
+    <Content Include="CSS\8_9.css" />
     <Content Include="img\sprite8_5.jpg" />
     <Content Include="img\sprite8_5_v2.jpg" />
     <Content Include="Web.config" />
