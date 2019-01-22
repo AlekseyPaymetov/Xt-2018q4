@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="8_10_VK.html" />
     <Content Include="8_1_List_menu.html" />
     <Content Include="8_2_Registration_form.html" />
     <Content Include="8_3_Dropdown_menu.html" />
@@ -78,6 +79,7 @@
     <Content Include="8_8_Article.html" />
     <Content Include="8_9_Step_counter.html" />
     <Content Include="CSS\8_1.css" />
+    <Content Include="CSS\8_10.css" />
     <Content Include="CSS\8_2.css" />
     <Content Include="CSS\8_3.css" />
     <Content Include="CSS\8_4.css" />
@@ -87,6 +89,10 @@
     <Content Include="CSS\8_7.css" />
     <Content Include="CSS\8_8.css" />
     <Content Include="CSS\8_9.css" />
+    <Content Include="img for VK\audio.png" />
+    <Content Include="img for VK\icons.png" />
+    <Content Include="img for VK\logo.png" />
+    <Content Include="img for VK\notify.png" />
     <Content Include="img\sprite8_5.jpg" />
     <Content Include="img\sprite8_5_v2.jpg" />
     <Content Include="Web.config" />
