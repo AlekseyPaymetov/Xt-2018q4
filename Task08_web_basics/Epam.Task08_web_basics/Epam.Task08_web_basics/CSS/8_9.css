@@ -5,7 +5,6 @@
 
 div {
     position: relative;
-    /*display: inline-block;*/
     float: left;
     box-sizing: border-box;
     height: 26px;
@@ -14,31 +13,39 @@ div {
     background: linear-gradient(0deg, #ccc, #999 50%, #ccc);
 }
 
-    div::after,
-    div::before {
-        display: block;
-        position: absolute;
-        content: '';
-        border: 13px solid transparent;
-    }
+div::after,
+div::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border: 13px solid transparent;
+}
 
-    div::before {
-        border-left: 6px solid #fff;
-        left: 0;
-        top: 0;
-    }
+div::before {
+    border-left: 6px solid white;
+    left: 0;
+    top: 0;
+}
 
-    div::after {
-        right: 0;
-        top: 0;
-        border-right: 0 solid #fff;
-        border-left: 6px solid transparent;
-        border-top: 13px solid #fff;
-        border-bottom: 13px solid #fff;
-    }
+div::after {
+    right: 0;
+    top: 0;
+    border-right: 0 solid #fff;
+    border-left: 6px solid transparent;
+    border-top: 13px solid #fff;
+    border-bottom: 13px solid #fff;
+}
 
 div:hover {
     color: #fff;
     background: linear-gradient(0deg, #B2E28F, #64C51D 50%, #B2E28F);
     cursor: pointer;
+}
+
+.first::before {
+    border: 0 solid transparent;
+}
+
+.last::after {
+    border: 0 solid transparent;
 }
