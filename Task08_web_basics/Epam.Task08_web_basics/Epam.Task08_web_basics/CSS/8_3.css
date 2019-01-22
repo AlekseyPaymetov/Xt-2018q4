@@ -1,44 +1,63 @@
-﻿/*Стиль для всех списков ul*/
-ul {
+﻿ul {
     list-style: none;
     margin: 0;
-    padding: 0;
-    border: 1px solid black;
+    padding: 2px;
     float: left;
-    box-shadow: 0 0 5px 2px grey;
-    /*display: inline-block;*/
+}
+li {
+    margin-top: 2px;
 }
 
-/* Стиль для всех записей li*/
-.topUl li {
-    float: left;
-    position: relative;
+a {
+    text-decoration: none;
+    color: blue;
 }
 
-/*Стиль для верхнего уровня меню*/
-.topUl {
-}
-
-/* Стиль для записей li верхнего уровня*/
-/*.topUl > li {
-        margin-left: 20px;
-}*/
-
-.topUl li ul {
-        display: none;
-        position: absolute;
-        width: 100px;
-}
-
-.topUl li:hover ul {
-        display: block;
-    }
-
-a{
-    color:blue;
+span {
+    color: blue;
+    z-index: 2;
     text-decoration: underline;
 }
 
-.topUl li a:hover {
-    color: black;
+.topUl li ul {
+    display: none;
+    position: absolute;
+    width: 100px;
 }
+.topUl li ul li{
+    
+}
+
+
+.topUl {
+    position: relative;
+    float: left;
+    margin-left: 20px;
+}
+
+.topUl li:hover ul {
+    display: block;
+    z-index: 1;
+    box-shadow: 0 0 5px 2px #b9b9b9;
+}
+
+.topUl li:hover span {
+        color: black;
+        text-decoration: none;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        box-shadow: 0 6px 0 0 #fff, 0 0 6px 3px #ccc;
+    }
+
+.topUl li ul li:hover {
+        background-color: #37abff
+}
+
+.topUl li ul li:hover a{
+    color: white;
+}
+
+.topUl span:hover {
+    cursor: pointer;
+}
+
