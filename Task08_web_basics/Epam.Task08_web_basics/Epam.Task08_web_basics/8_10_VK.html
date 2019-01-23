@@ -6,62 +6,145 @@
     <link href="CSS/8_10.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-       <div class="centerHeader">
-        <img class="logo" src="img for VK/logo.png" />
-        <input class="find" type="text" />
-        <img class="notify" src="img for VK/notify.png" />
-           <div class="user">
-               Имя
-               <img src="" alt=""/>
-           </div>
-       </div>
-    </header>
-    <main >
-        <section class="leftColumn">
+    <div class="headBg">
+        <div class="headMiddle">
+            <div class="headLeftMenu fl_l">
+                <div class="logoImg"></div>
+            </div>
+            <div class="headSearch fl_l">
+                <input type="text" class="searchMenu" value="Поиск" />
+            </div>
+            <div class="headNotification fl_l">
+                <div class="notificationImg"></div>
+            </div>
+            <div class="headMusik fl_l">
+                <div class="audioImg"></div>
+            </div>
+            <div class="headUser">
+                <din class="userName fl_l">
+                    Юзер
+                </din>
+                <div class="userPhoto" height="40px" width="40px">
+                    <svg>
+                        <pattern id="pattern" height="100%" width="100%">
+                            <image height="40px" width="40px" xlink:href="imgVK/user.jpg" preserveAspectRatio="xMidYMin slice"></image>
+                        </pattern>
+                        <circle cx=250 cy=20 r="18" fill="url(#pattern)"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page">
+        <div id="menu">
             <nav>
-                <ul class="mainMenu">
-                    <li>Моя страница</li>
-                    <li>Новости</li>
-                    <li>Сообщения</li>
-                    <li>Друзья</li>
-                    <li>Группы</li>
-                    <li>Фотографии</li>
-                    <li>Музыка</li>
-                    <li>Видео</li>
-                    <li>Игры</li>
-                </ul>
+                <ol>
+                    <li><a href="#" class="home">Моя страница</a></li>
+                    <li><a href="#" class="news">Новости</a></li>
+                    <li><a href="#" class="message">Сообщения</a></li>
+                    <li><a href="#" class="friends">Друзья</a></li>
+                    <li><a href="#" class="groups">Группы</a></li>
+                    <li><a href="#" class="foto">Фотографии</a></li>
+                    <li><a href="#" class="music">Музыка</a></li>
+                    <li><a href="#" class="video">Видео</a></li>
+                    <li><a href="#" class="games">Игры</a></li>
+                    <div class="vk_hr"></div>
+                    <li><a href="#" class="pay">VK Pay</a></li>
+                    <div class="vk_hr"></div>
+                    <li><a href="#" class="products">Товары</a></li>
+                    <li><a href="#" class="bookmarks">Закладки</a></li>
+                    <li><a href="#" class="docs">Документы</a></li>
+                </ol>
             </nav>
-            <div class="ad">
+
+        </div>
+
+        <div id="content_page">
+
+            <div id="cp_header">Общее</div>
+
+            <div class="parent_cp_middle">
+
+                <div class="cp_middle">
+                    <span>Меню сайта</span>
+                    <a href="#">Настроить отображение пунктов меню</a>
+                </div>
+
+                <div class="cp_middle">
+                    <span>Настройки профиля</span>
+                    <div class="check_container">
+
+                        <div><input type="checkbox"><span class="check_description">Скрывать блок подарков</span></div>
+                        <div><input type="checkbox"><span class="check_description">При открытии профиля показывать мои записи</span></div>
+                        <div><input type="checkbox"><span class="check_description">Отключить комментирование записей</span></div>
+                        <div><input type="checkbox"><span class="check_description question">Специальные возможности</span></div>
+
+                    </div>
+                </div>
+
+                <div class="cp_middle">
+                    <span>Настройки контента</span>
+                    <div class="check_container">
+
+                        <div><input type="checkbox"><span class="check_description">Автоматически воспроизводить видеозаписи</span></div>
+                        <div><input type="checkbox"><span class="check_description">Автоматически воспроизводить GIF-анимации</span></div>
+                        <div><input type="checkbox"><span class="check_description">Подсказывать стикеры в полях ввода</span></div>
+                        <div><input type="checkbox"><span class="check_description question">Автоматически отмечать друзей на фотографиях</span></div>
+                        <a href="#">Посмотреть заблокированные приложения</a>
+
+                    </div>
+                </div>
+
+                <div class="cp_middle">
+                    <span>Пароль</span>
+                    <span class="check_description">обновлен год назад</span>
+                    <a href="#" class="edit">Изменить</a>
+                </div>
+
+                <div class="cp_middle">
+                    <span>Электронная почта</span>
+                    <span class="check_description">fa***@mail.ru</span>
+                    <a href="#" class="edit">Изменить</a>
+                </div>
+
+                <div class="cp_middle">
+                    <span>Номер телефона</span>
+                    <span class="check_description">+7*** *** **32</span>
+                    <a href="#" class="edit">Изменить</a>
+                </div>
+
+                <div class="cp_middle">
+                    <span>Адрес страницы</span>
+                    <span class="check_description">https://vk.com/</span>
+                    <a href="#" class="edit">Изменить</a>
+                </div>
+
+                <div class="cp_middle">
+                    <span>Язык</span>
+                    <span class="check_description">Русский</span>
+                    <a href="#" class="edit">Изменить</a>
+                </div>
 
             </div>
-            <div class="ad">
 
-            </div>
-            <div class="ad">
+            <div id="cp_footer">Вы можете <a href="#">удалить свою страницу.</a></div>
 
-            </div>
-            <div class="additionalInfo">
+        </div>
 
-            </div>
-        </section>
-        <section class="mainColumn">
-            <nav>
+        <div id="righ_block">
 
-            </nav>
-            <div class="ad">
+            <a href="#" class="active">Общее</a>
+            <a href="#">Безопасность</a>
+            <a href="#">Приватность</a>
+            <a href="#" class="settings">Оповещения</a>
+            <a href="#">Чёрный список</a>
+            <a href="#">Настройки приложений</a>
+            <a href="#">Мобильные сервисы</a>
+            <a href="#">Платежи, подписки, переводы</a>
 
-            </div>
-            <div class="ad">
+        </div>
 
-            </div>
-            <div class="ad">
-
-            </div>
-            <div class="additionalInfo">
-
-            </div>
-        </section>
-    </main>
+    </div>
 </body>
 </html>
