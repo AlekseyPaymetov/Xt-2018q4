@@ -68,8 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="9_1_char_remover.html" />
+    <Content Include="9_2_Math_calculator.html" />
     <Content Include="css\9_1_char_remover.css" />
+    <Content Include="css\9_2_Math_calculator.css" />
     <Content Include="js\9_1_char_remover.js" />
+    <Content Include="js\9_2_Math_calculator.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
