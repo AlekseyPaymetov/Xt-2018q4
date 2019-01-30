@@ -9,7 +9,6 @@
 
     function calculate() {
         var text = input.value;
-        var copyOfText = text;
         text = text.trim();
         if (text.indexOf("=") != text.length - 1) {
             output.innerHTML = "Errors in input.";
@@ -82,7 +81,6 @@
         }
 
         output.innerHTML = number1[0].toFixed(2);
-
     }
 
 })()
