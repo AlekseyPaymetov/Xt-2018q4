@@ -1,0 +1,42 @@
+﻿body {
+}
+
+#galleryDiv, #gallery, #middleBox {
+    width: 1366px;
+}
+
+#galleryDiv, #gallery {
+    height: 768px;
+}
+
+#middleBox {
+    margin: 20px auto;
+}
+
+#gallery {
+    border: none;
+ }
+
+#controlDiv {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+}
+
+button {
+    min-height: 26px;
+    min-width: 44px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+#closeWindow{
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+}
+
+#timer {
+    margin: 0 10px;
+}
