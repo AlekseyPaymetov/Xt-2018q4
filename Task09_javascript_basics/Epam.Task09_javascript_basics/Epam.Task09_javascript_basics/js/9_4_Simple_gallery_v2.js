@@ -3,12 +3,10 @@
 (function () {
 
     var srcs = [
-        "https://images6.alphacoders.com/672/672060.jpg",
+        "https://www.youtube.com/",
         "https://www.gismeteo.ru/weather-saratov-5032/",
-        "https://images7.alphacoders.com/661/661243.png",
+        "https://www.epam-group.ru/about/company/epam-russia/saratov",
         "http://learn.javascript.ru/",
-        "https://images3.alphacoders.com/672/672392.png",
-        "https://images7.alphacoders.com/331/331095.jpg"
     ]
 
     var TIME_CONST_S = 5;
@@ -16,14 +14,14 @@
     var numberOfSeconds = TIME_CONST_S;
     var showPagesTime;
     var showTime;
+    var gallery;
 
     window.onload = function () {
-        gallery.setAttribute("src", srcs[numberOfPage]);
+        gallery = window.open(srcs[numberOfPage]);
         showPagesTime = setInterval(showPages, (TIME_CONST_S + 1) * 1000);
         showTimer();
         showTime = setInterval(showTimer, 1000);
         reset.onclick = resetTimers;
-        closeWindow.onclick = function () { close(); }
         prev.onclick = goToPreviosPage;
         next.onclick = goToNextPage;
     }
@@ -38,13 +36,12 @@
             else {
                 clearInterval(showTime);
                 clearInterval(showPagesTime);
-                gallery.setAttribute("src", "")
-                close();
+                gallery.close();
                 return;
             }
         }
 
-        gallery.setAttribute("src", srcs[numberOfPage])
+        gallery.location.replace(srcs[numberOfPage]);
         clearInterval(showTime);
         numberOfSeconds = TIME_CONST_S;
         showTimer();
@@ -81,5 +78,7 @@
         showPages();
         resetTimers();
     }
+
+
 
 })()
