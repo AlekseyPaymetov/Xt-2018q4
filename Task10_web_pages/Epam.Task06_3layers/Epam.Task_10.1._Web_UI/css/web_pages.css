@@ -1,0 +1,47 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+#Menu {
+    display: inline-block;
+  border: 1px solid grey;
+}
+
+#UserMenu, #AwardMenu {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+}
+
+#AwardMenu {
+    border-left: 1px solid grey;
+    padding-left: 5px;
+}
+
+p {
+    font-weight: bold;
+}
+
+button {
+    margin: 5px;
+    border: none;
+    width: 120px;
+    height: 40px;
+    background-color: #4090f2;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #1d7ef4;
+}
+
+input {
+    width: 100px;
+    margin: 5px;
+}
+
+#Output {
+    margin: 10px 5px;
+}

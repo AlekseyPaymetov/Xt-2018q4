@@ -1,0 +1,147 @@
+﻿@using Epam.Task06_3layers.Common;
+@using Epam.Task06_3layers.Entities;
+
+@if (IsAjax)
+{
+    string action = Request.Params["action"];
+    DependencyResolves logic = new DependencyResolves();
+    string text = string.Empty;
+    switch (action)
+    {
+        case "ShowAllUsers":
+            <p>All users:</p>
+            foreach (var item in logic.GetAllInfoAboutUsers())
+            {
+                @item;
+                <br />
+            }
+            break;
+
+        case "AddUser":
+            {
+                string idStr = Request.Params["id"];
+                int id = int.Parse(idStr);
+                string name = Request.Params["name"];
+                string birthDate = Request.Params["birthDate"];
+                DateTime.TryParse(birthDate, out DateTime dateOfBirth);
+                if (logic.AddUser(logic.CreateUser(id, name, dateOfBirth)))
+                {
+                    text = "User was successfully added";
+                }
+                else
+                {
+                    text = "Can't add this user";
+                }
+                break;
+            }
+
+        case "DeleteUser":
+            {
+                string idStr = Request.Params["id"];
+                int id = int.Parse(idStr);
+                if (logic.DeleteUser(id))
+                {
+                    text = "User was successfully deleted.";
+                }
+                else
+                {
+                    text = "Can't delete user with this id.";
+                }
+                break;
+            }
+        case "ShowAllAwards":
+            {
+                List<string> awards = logic.GetAllInfoAboutAwards();
+                foreach (var item in awards)
+                {
+                    @item;
+                    <br />
+                }
+                break;
+            }
+        case "ShowAllAwardsAndUsers":
+            {
+                List<string> awardsAndUsers = logic.GetAllInfoUsersFromAwards();
+                foreach (var item in awardsAndUsers)
+                {
+                    @item;
+                    <br />
+                }
+                break;
+            }
+        case "AddAward":
+            {
+                string idStr = Request.Params["id"];
+                int id = int.Parse(idStr);
+                string title = Request.Params["title"];
+                if (logic.AddAward(logic.CreateAward(id, title)))
+                {
+                    text = "Award was successfully added.";
+                }
+                else
+                {
+                    text = "Can't add this award";
+                }
+                break;
+            }
+        case "DeleteAward":
+            {
+                string idStr = Request.Params["id"];
+                int id = int.Parse(idStr);
+                if (logic.DeleteAward(id))
+                {
+                    text = "Award was successfully deleted.";
+                }
+                else
+                {
+                    text = "Can't delete this award";
+                }
+                break;
+            }
+        case "AddAwardToUser":
+            {
+                string idStrU = Request.Params["idU"];
+                int idU = int.Parse(idStrU);
+                string idStrA = Request.Params["idA"];
+                int idA = int.Parse(idStrA);
+                if (logic.AddAwardToUser(logic.CreateAwardToUser(idA,idU)))
+                {
+                    text = "Award to iser was successfully added.";
+                }
+                else
+                {
+                    text = "Can't add this award to user";
+                }
+                break;
+            }
+
+        case "DeleteUserAward":
+            {
+                string idStrU = Request.Params["idU"];
+                int idU = int.Parse(idStrU);
+                string idStrA = Request.Params["idA"];
+                int idA = int.Parse(idStrA);
+                if (logic.DeleteAwardToUser(idA, idU))
+                {
+                    text = "User award was successfully deleted.";
+                }
+                else
+                {
+                    text = "Can't delete this user award";
+                }
+                break;
+            }
+
+        default:
+            text = "Error in index";
+            return;
+    }
+
+    if (!String.IsNullOrEmpty(text))
+    {
+        <span>@text</span>
+    }
+
+    return;
+}
+

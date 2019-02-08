@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Task 10</title>
+    <link href="~/css/web_pages.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="Menu">
+        <div id="UserMenu">
+            <button type="submit" id="ShowAllUsers" class="ServerRequest">Show all users</button>
+            <form  action="#" id="AddUserForm">
+                <button type="submit" class="ServerRequest" id="AddUser">Add user</button><br />
+                &nbsp;id: <input type="number" class="UserId"/>
+                name: <input type="text" class="UserName"/>
+                date (dd.mm.yyyy): <input type="text" class="UserBirthDate"/>
+            </form>
+            <form  action="#" id="DeleteUserForm">
+                <button type="submit" class="ServerRequest" id="DeleteUser">Delete user</button><br />
+                &nbsp;id: <input type="number" class="UserId" />
+            </form>
+        </div>
+        <div id="AwardMenu">
+            <button type="submit" id="ShowAllAwards"  class="ServerRequest">Show all awards</button><br />
+            <button type="submit" id="ShowAllAwardsAndUsers"  class="ServerRequest">Show all awards and users</button>
+            <form id="AddAwardForm" action="#">
+                <button type="submit" id="AddAward"  class="ServerRequest">Add award</button><br />
+                &nbsp;id: <input type="number" class="AwardId"/>
+                title: <input type="text" class="AwardTitle"/>
+            </form>
+            <form id="DeleteAwardForm" action="#">
+                <button type="submit" id="DeleteAward"  class="ServerRequest">Delete award</button><br />
+                &nbsp;id: <input type="number" class="AwardId"/>
+            </form>
+            <form id="AddAwardToUserForm" action="#">
+                <button type="submit" id="AddAwardToUser"  class="ServerRequest">Add award to user</button><br />
+                &nbsp;id (award): <input type="number" class="AwardId"/>
+                id (user): <input type="number" class="UserId"/>
+            </form>
+            <form id="DeleteUserAwardForm" action="#">
+                <button type="submit" id="DeleteUserAward"  class="ServerRequest">Delete a user award</button><br />
+                &nbsp;id (award): <input type="number" class="AwardId"/>
+                id (user): <input type="number" class="UserId"/>
+            </form>
+        </div>
+    </div>
+
+    <div id="Output">
+        Result
+    </div>
+    
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/WorkWithServer.js"></script>
+</body>
+</html>
