@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task06_3layers
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             IPL currentUI = new ConsoleUI();
             currentUI.Start();

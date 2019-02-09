@@ -118,35 +118,71 @@
                 })
             }
 
-        })
+            if (idInput == 'ChangeUser') {
+                var oldUserId = $('#ChangeUserForm .OldUserId').val();
+                userId = $('#ChangeUserForm .UserId').val();
+                userName = $('#ChangeUserForm .UserName').val();
+                userBirthDate = $('#ChangeUserForm .UserBirthDate').val();
+
+                $.ajax({
+                    method: "POST",
+                    url: "Logic.cshtml",
+                    data: { action: idInput, oldId: oldUserId, id: userId, name: userName, birthDate: userBirthDate },
+                    success: function (responce) {
+                        Output.innerHTML = responce;
+                    }
+                })
+            }
+
+            if (idInput == 'ChangeAward') {
+                var oldAwardId = $('#ChangeAwardForm .OldAwardId').val();
+                awardId = $('#ChangeAwardForm .AwardId').val();
+                awardTitle = $('#ChangeAwardForm .AwardTitle').val();
+                
+                $.ajax({
+                    method: "POST",
+                    url: "Logic.cshtml",
+                    data: { action: idInput, oldId: oldAwardId, id: awardId, title: awardTitle},
+                    success: function (responce) {
+                        Output.innerHTML = responce;
+                    }
+                })
+            }
+
+            if (idInput == 'ChangeUserAward') {
+                oldUserId = $('#ChangeUserAwardForm .OldUserId').val();
+                oldAwardId = $('#ChangeUserAwardForm .OldAwardId').val();
+                awardId = $('#ChangeUserAwardForm .AwardId').val();
+                userId = $('#ChangeUserAwardForm .UserId').val();
+
+                $.ajax({
+                    method: "POST",
+                    url: "Logic.cshtml",
+                    data: { action: idInput, 'oldUserId': oldUserId, 'oldAwardId': oldAwardId, 'awardId': awardId, 'userId': userId },
+                    success: function (responce) {
+                        Output.innerHTML = responce;
+                    }
+                })
+            }
+
+            if(idInput == 'DeleteUserAward_v2') {
+                var answer = confirm("Delete this award from all users?");
+                if (answer) {
+                    awardId = $('#DeleteUserAwardForm_v2 .AwardId').val();
+                    userId = $('#DeleteUserAwardForm_v2 .UserId').val();
+                    $.ajax({
+                        method: "POST",
+                        url: "Logic.cshtml",
+                        data: { action: idInput, idA: awardId, idU: userId },
+                        success: function (responce) {
+                            Output.innerHTML = responce;
+                        }
+                    })
+                }
+                
+            }
             
-        //$('#ShowAllUsers').submit(function (event) {
-        //    event.preventDefault();
-        //    $.ajax({
-        //        method: "POST",
-        //        url: "Logic.cshtml",
-        //        data: { action: "ShowAllUsers" },
-        //        success: function (responce) {
-        //            Output.innerHTML = responce;
-        //        }
-        //    })
-        //})
-
-        //$('#AddUser').submit(function (event) {
-        //    var userId = $('#AddUser .UserId').val();
-        //    var userName = $('#AddUser .UserName').val();
-        //    var userBirthDate = $('#AddUser .UserBirthDate').val();
-        //    event.preventDefault();
-        //    $.ajax({
-        //        method: "POST",
-        //        url: "Logic.cshtml",
-        //        data: { action: "AddUse", id: userId, name: userName, birthDate: userBirthDate },
-        //        success: function (responce) {
-        //            Output.innerHTML = responce;
-        //        }
-        //    })
-        //})
-
+        })
        
     }
 

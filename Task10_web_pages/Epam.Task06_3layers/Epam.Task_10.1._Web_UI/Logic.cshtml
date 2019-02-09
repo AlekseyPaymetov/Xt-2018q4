@@ -104,7 +104,7 @@
                 int idU = int.Parse(idStrU);
                 string idStrA = Request.Params["idA"];
                 int idA = int.Parse(idStrA);
-                if (logic.AddAwardToUser(logic.CreateAwardToUser(idA,idU)))
+                if (logic.AddAwardToUser(logic.CreateAwardToUser(idA, idU)))
                 {
                     text = "Award to iser was successfully added.";
                 }
@@ -131,7 +131,102 @@
                 }
                 break;
             }
+        case "ChangeUser":
+            {
+                string oldIdStr = Request.Params["oldId"];
+                int oldId = int.Parse(oldIdStr);
+                string idStr = Request.Params["id"];
+                int id = int.Parse(idStr);
+                string name = Request.Params["name"];
+                string birthDate = Request.Params["birthDate"];
+                DateTime.TryParse(birthDate, out DateTime dateOfBirth);
+                if (logic.DeleteUser(oldId))
+                {
+                    if (logic.AddUser(logic.CreateUser(id, name, dateOfBirth)))
+                    {
+                        text = "User was successfully changed.";
+                    }
+                    else
+                    {
+                        text = "Error! Can't change user with this id. User deleted.";
+                    }
+                }
+                else
+                {
+                    text = "Can't change user with this id.";
+                }
 
+                break;
+            }
+        case "ChangeAward":
+            {
+                string oldIdStr = Request.Params["oldId"];
+                int oldId = int.Parse(oldIdStr);
+                string idStr = Request.Params["id"];
+                int id = int.Parse(idStr);
+                string title = Request.Params["title"];
+                if (logic.DeleteAward(oldId))
+                {
+                    if (logic.AddAward(logic.CreateAward(id, title)))
+                    {
+                        text = "Award was successfully changed.";
+                    }
+                    else
+                    {
+                        text = "Error! Can't change this award. Award deleted.";
+                    }
+                }
+                else
+                {
+                    text = "Can't change this award";
+                }
+                break;
+            }
+        case "ChangeUserAward":
+            {
+                string oldUserIdStr = Request.Params["oldUserId"];
+                int oldUserId = int.Parse(oldUserIdStr);
+                string oldAwardIdStr = Request.Params["oldAwardId"];
+                int oldAwardId = int.Parse(oldAwardIdStr);
+                string userIdStr = Request.Params["userId"];
+                int userId = int.Parse(userIdStr);
+                string awardIdStr = Request.Params["awardId"];
+                int awardId = int.Parse(awardIdStr);
+
+                if (logic.DeleteAwardToUser(oldAwardId, oldUserId))
+                {
+                    if (logic.AddAwardToUser(logic.CreateAwardToUser(awardId, userId)))
+                    {
+                        text = "Award to user was successfully changed.";
+                    }
+                    else
+                    {
+                        text = "Error! Can't change this user award. User award was deleted.";
+                    }
+                }
+                else
+                {
+                    text = "Can't change this user award.";
+                }
+
+                break;
+            }
+        case "DeleteUserAward_v2":
+            {
+                string idStrU = Request.Params["idU"];
+                int idU = int.Parse(idStrU);
+                string idStrA = Request.Params["idA"];
+                int idA = int.Parse(idStrA);
+                if (logic.DeleteAwardFromAllUsers(idA, idU))
+                {
+                    text = "All awards was successfully deleted.";
+                }
+                else
+                {
+                    text = "Can't delete this award from users";
+                }
+                break;
+            }
         default:
             text = "Error in index";
             return;

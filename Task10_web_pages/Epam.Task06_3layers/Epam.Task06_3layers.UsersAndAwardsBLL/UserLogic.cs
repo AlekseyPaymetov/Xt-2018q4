@@ -1,20 +1,20 @@
-﻿using Epam.Task06_3layers.Entities;
-using Epam.Task06_3layers.UsersAndAwardsDAL;
-using Epam.Task06_3layers.UsersAndAwardsInterfaceBLL;
-using Epam.Task06_3layers.UsersAndAwardsInterfaceDAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Epam.Task06_3layers.Entities;
+using Epam.Task06_3layers.UsersAndAwardsDAL;
+using Epam.Task06_3layers.UsersAndAwardsInterfaceBLL;
+using Epam.Task06_3layers.UsersAndAwardsInterfaceDAL;
 
 namespace Epam.Task06_3layers.UsersAndAwardsBLL
 {
-    public class UserLogic : IUserLogic <User>
+    public class UserLogic : IUserLogic<User>
     {
         private AbstractTxtDao<User> txtDao = new UsersTxtDao();
         private List<User> cacheList = new List<User>();
-        
+
         public UserLogic()
         {
             this.Initialization();
@@ -59,6 +59,5 @@ namespace Epam.Task06_3layers.UsersAndAwardsBLL
         {
             this.cacheList.Clear();
         }
-
     }
 }

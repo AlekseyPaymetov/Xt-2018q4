@@ -1,11 +1,11 @@
-﻿using Epam.Task06_3layers.Entities;
-using Epam.Task06_3layers.UsersAndAwardsBLL;
-using Epam.Task06_3layers.UsersAndAwardsInterfaceBLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Epam.Task06_3layers.Entities;
+using Epam.Task06_3layers.UsersAndAwardsBLL;
+using Epam.Task06_3layers.UsersAndAwardsInterfaceBLL;
 
 namespace Epam.Task06_3layers.Common
 {
@@ -186,6 +186,32 @@ namespace Epam.Task06_3layers.Common
             }
 
             return awardsAndUsers;
+        }
+
+        public bool DeleteAwardFromAllUsers(int idAward, int idUser)
+        {
+            if (this.DeleteAwardToUser(idAward, idUser))
+            {
+                List<int> idsForDel = new List<int>();
+                foreach (var item in this.workWithAwardsToUsers.GetAll())
+                {
+                    if (item.IdAward == idAward)
+                    {
+                        idsForDel.Add(item.Id);
+                    }
+                }
+
+                foreach (var item in idsForDel)
+                {
+                    this.workWithAwardsToUsers.Delete(item);
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private int CreateUniqueIdForAwardToUser()

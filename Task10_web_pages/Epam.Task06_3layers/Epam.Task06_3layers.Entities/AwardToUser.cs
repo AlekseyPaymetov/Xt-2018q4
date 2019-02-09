@@ -25,6 +25,5 @@ namespace Epam.Task06_3layers.Entities
         {
             return $"Id: {this.Id}{Environment.NewLine}IdAward: {this.IdAward}{Environment.NewLine}IdUser: {this.IdUser}{Environment.NewLine}";
         }
-
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task06_3layers
 {
-    interface IPL
+    public interface IPL
     {
         void Start();
     }

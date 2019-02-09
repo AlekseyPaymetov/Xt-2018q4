@@ -1,16 +1,16 @@
-﻿using Epam.Task06_3layers.Entities;
-using Epam.Task06_3layers.UsersAndAwardsDAL;
-using Epam.Task06_3layers.UsersAndAwardsInterfaceBLL;
-using Epam.Task06_3layers.UsersAndAwardsInterfaceDAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Epam.Task06_3layers.Entities;
+using Epam.Task06_3layers.UsersAndAwardsDAL;
+using Epam.Task06_3layers.UsersAndAwardsInterfaceBLL;
+using Epam.Task06_3layers.UsersAndAwardsInterfaceDAL;
 
 namespace Epam.Task06_3layers.UsersAndAwardsBLL
 {
-    public class AwardToUserLogic : IAwardToUserLogic <AwardToUser>
+    public class AwardToUserLogic : IAwardToUserLogic<AwardToUser>
     {
         private AbstractTxtDao<AwardToUser> txtDao = new AwardsToUsersTxtDao();
         private List<AwardToUser> cacheList = new List<AwardToUser>();
