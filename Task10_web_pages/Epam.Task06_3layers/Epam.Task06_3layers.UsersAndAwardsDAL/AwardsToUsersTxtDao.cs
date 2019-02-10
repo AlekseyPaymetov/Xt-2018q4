@@ -15,7 +15,7 @@ namespace Epam.Task06_3layers.UsersAndAwardsDAL
         { get; } = "txtDB";
 
         protected override string TxtNameToWork
-        { get; } = "AwardsAndUsers.txt";
+        { get; } = "AwardAndUserDB.txt";
 
         protected override int IdInEveryStringNumber
         { get; } = 3;

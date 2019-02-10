@@ -19,7 +19,7 @@ namespace Epam.Task06_3layers.UsersAndAwardsInterfaceDAL
         {
             get
             {
-                return Path.Combine(Directory.GetCurrentDirectory(), this.DirectoryToWork);
+                return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, this.DirectoryToWork);
             }
         }
 

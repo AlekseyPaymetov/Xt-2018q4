@@ -8,7 +8,7 @@ namespace Epam.Task06_3layers.UsersAndAwardsInterfaceBLL
 {
     public interface IUserLogic<T>
     {
-        T Create(int id, string name, DateTime dateOfBirt);
+        T Create(int id, string name, DateTime dateOfBirt, string imgPath);
 
         bool Add(T someObject);
 

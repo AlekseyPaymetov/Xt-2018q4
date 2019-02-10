@@ -8,11 +8,12 @@ namespace Epam.Task06_3layers.Entities
 {
     public class User
     {
-        public User(int id, string name, DateTime dateOfBirth)
+        public User(int id, string name, DateTime dateOfBirth, string imgPath = @"img\users\default.jpg")
         {
             this.Id = id;
             this.Name = name;
             this.DateOfBirth = dateOfBirth;
+            this.ImgPath = imgPath;
         }
 
         public int Id { get; set; }
@@ -20,6 +21,8 @@ namespace Epam.Task06_3layers.Entities
         public string Name { get; set; }
 
         public DateTime DateOfBirth { get; set; }
+
+        public string ImgPath { get; set; }
 
         public int Age
         {

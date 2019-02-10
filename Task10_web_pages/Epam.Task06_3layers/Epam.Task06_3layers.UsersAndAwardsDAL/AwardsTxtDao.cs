@@ -15,10 +15,10 @@ namespace Epam.Task06_3layers.UsersAndAwardsDAL
         { get; } = "txtDB";
 
         protected override string TxtNameToWork
-        { get; } = "Award.txt";
+        { get; } = "AwardDB.txt";
 
         protected override int IdInEveryStringNumber
-        { get; } = 2;
+        { get; } = 3;
 
         public override bool Add(Award award)
         {
@@ -34,7 +34,7 @@ namespace Epam.Task06_3layers.UsersAndAwardsDAL
 
             try
             {
-                string[] awardAsStrings = { award.Id.ToString(), award.Title };
+                string[] awardAsStrings = { award.Id.ToString(), award.Title, award.ImgPath };
                 File.AppendAllLines(this.FullPathToTxtDB, awardAsStrings);
             }
             catch
@@ -108,7 +108,7 @@ namespace Epam.Task06_3layers.UsersAndAwardsDAL
             {
                 if (int.TryParse(allData[i], out int id))
                 {
-                    allAwards.Add(new Award(id, allData[i + 1]));
+                    allAwards.Add(new Award(id, allData[i + 1], allData[i + 2]));
                 }
                 else
                 {

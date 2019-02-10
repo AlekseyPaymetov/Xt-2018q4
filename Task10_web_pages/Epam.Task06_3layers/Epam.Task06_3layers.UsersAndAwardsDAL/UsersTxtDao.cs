@@ -14,10 +14,10 @@ namespace Epam.Task06_3layers.UsersAndAwardsDAL
         { get; } = "txtDB";
 
         protected override string TxtNameToWork
-        { get; } = "txtDB.txt";
+        { get; } = "userDB.txt";
 
         protected override int IdInEveryStringNumber
-        { get; } = 3;
+        { get; } = 4;
 
         public override bool Add(User user)
         {
@@ -33,7 +33,7 @@ namespace Epam.Task06_3layers.UsersAndAwardsDAL
 
             try
             {
-                string[] userAsStrings = { user.Id.ToString(), user.Name, user.DateOfBirth.ToLongDateString() };
+                string[] userAsStrings = { user.Id.ToString(), user.Name, user.DateOfBirth.ToLongDateString(), user.ImgPath };
                 File.AppendAllLines(this.FullPathToTxtDB, userAsStrings);
             }
             catch
@@ -108,7 +108,7 @@ namespace Epam.Task06_3layers.UsersAndAwardsDAL
             {
                 if (int.TryParse(allData[i], out int id) && DateTime.TryParse(allData[i + 2], out DateTime someDate))
                 {
-                    allUsers.Add(new User(id, allData[i + 1], someDate));
+                    allUsers.Add(new User(id, allData[i + 1], someDate, allData[i + 3]));
                 }
                 else
                 {

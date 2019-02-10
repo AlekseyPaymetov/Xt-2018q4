@@ -1,5 +1,6 @@
 ﻿@using Epam.Task06_3layers.Common;
 @using Epam.Task06_3layers.Entities;
+@using System.Reflection
 
 @if (IsAjax)
 {
@@ -10,27 +11,85 @@
     {
         case "ShowAllUsers":
             <p>All users:</p>
-            foreach (var item in logic.GetAllInfoAboutUsers())
+            foreach (var user in logic.GetAllUsers())
             {
-                @item;
-                <br />
+                <span>
+                    <br />
+                    &nbsp;<img width="64" height="64" src="@user.ImgPath" alt="Your ad could be here"><br />
+                    Id: @user.Id
+                    Name: @user.Name
+                    &nbsp;Age: @user.Age
+                    &nbsp;Birth date: @user.DateOfBirth.ToShortDateString()
+                </span><br />
+
+                foreach (var userToAward in logic.GetAllUserAwards())
+                {
+                    if (user.Id == userToAward.IdUser)
+                    {
+                        int idAward = userToAward.IdAward;
+                        foreach (var award in logic.GetAllAwards())
+                        {
+                            if (award.Id == idAward)
+                            {
+                                <span>
+                                    Has award id: @award.Id
+                                    &nbsp;title: @award.Title
+                                    &nbsp;<img width="32" height="32" src="@award.ImgPath" alt="Your ad could be here"><br />
+                                </span><br />
+                            }
+                        }
+                    }
+                }
+
             }
+
             break;
 
         case "AddUser":
             {
                 string idStr = Request.Params["id"];
-                int id = int.Parse(idStr);
                 string name = Request.Params["name"];
                 string birthDate = Request.Params["birthDate"];
-                DateTime.TryParse(birthDate, out DateTime dateOfBirth);
-                if (logic.AddUser(logic.CreateUser(id, name, dateOfBirth)))
+                string img = Request.Params["img"];
+                DateTime dateOfBirth;
+                int id;
+                if (!int.TryParse(idStr, out id) || !DateTime.TryParse(birthDate, out dateOfBirth))
                 {
-                    text = "User was successfully added";
+                    text = "Errors in input";
+                    break;
+                }
+
+                if (!String.IsNullOrEmpty(img))
+                {
+                    string base64str = img.Substring(img.IndexOf(',') + 1);
+                    byte[] bytes = Convert.FromBase64String(base64str);
+                    int startIndex = img.IndexOf('/');
+                    int endIndex = img.IndexOf(';');
+                    string extension = img.Substring(startIndex + 1, endIndex - startIndex - 1);
+                    string fileName = DateTime.Now.Ticks.ToString() + "." + extension;
+                    string pathToFile = Path.Combine(@"img\users", fileName);
+                    string fullPathToFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, pathToFile);
+
+                    File.WriteAllBytes(fullPathToFile, bytes);
+                    if (logic.AddUser(logic.CreateUser(id, name, dateOfBirth, pathToFile)))
+                    {
+                        text = "User was successfully added";
+                    }
+                    else
+                    {
+                        text = "Can't add this user";
+                    }
                 }
                 else
                 {
-                    text = "Can't add this user";
+                    if (logic.AddUser(logic.CreateUser(id, name, dateOfBirth)))
+                    {
+                        text = "User was successfully added";
+                    }
+                    else
+                    {
+                        text = "Can't add this user";
+                    }
                 }
                 break;
             }
@@ -51,17 +110,24 @@
             }
         case "ShowAllAwards":
             {
-                List<string> awards = logic.GetAllInfoAboutAwards();
-                foreach (var item in awards)
+                <p>All awards:</p>
+                foreach (var award in logic.GetAllAwards())
                 {
-                    @item;
-                    <br />
+                <span>
+                    id: @award.Id
+                    &nbsp;title: @award.Title
+                    path: @award.ImgPath
+                    &nbsp;<img width="32" height="32" src="@award.ImgPath" alt="Your ad could be here">
+                </span><br />
                 }
+
                 break;
             }
         case "ShowAllAwardsAndUsers":
             {
+                <p>All awards and users:</p>
                 List<string> awardsAndUsers = logic.GetAllInfoUsersFromAwards();
+
                 foreach (var item in awardsAndUsers)
                 {
                     @item;
@@ -72,22 +138,60 @@
         case "AddAward":
             {
                 string idStr = Request.Params["id"];
-                int id = int.Parse(idStr);
                 string title = Request.Params["title"];
-                if (logic.AddAward(logic.CreateAward(id, title)))
+                string img = Request.Params["img"];
+                int id;
+                if (!int.TryParse(idStr, out id))
                 {
-                    text = "Award was successfully added.";
+                    text = "Erroes in input";
+                    break;
+                }
+
+                if (!String.IsNullOrEmpty(img))
+                {
+                    string base64str = img.Substring(img.IndexOf(',') + 1);
+                    byte[] bytes = Convert.FromBase64String(base64str);
+                    int startIndex = img.IndexOf('/');
+                    int endIndex = img.IndexOf(';');
+                    string extension = img.Substring(startIndex + 1, endIndex - startIndex - 1);
+                    string fileName = DateTime.Now.Ticks.ToString() + "." + extension;
+                    string pathToFile = Path.Combine(@"img\award", fileName);
+                    string fullPathToFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, pathToFile);
+
+                    File.WriteAllBytes(fullPathToFile, bytes);
+                    if (logic.AddAward(logic.CreateAward(id, title, pathToFile)))
+                    {
+                        text = "Award was successfully added.";
+                    }
+                    else
+                    {
+                        text = "Can't add this award";
+                    }
                 }
                 else
                 {
-                    text = "Can't add this award";
+                    if (logic.AddAward(logic.CreateAward(id, title)))
+                    {
+                        text = "Award was successfully added.";
+                    }
+                    else
+                    {
+                        text = "Can't add this award";
+                    }
                 }
+
                 break;
             }
         case "DeleteAward":
             {
                 string idStr = Request.Params["id"];
-                int id = int.Parse(idStr);
+                int id;
+                if (!int.TryParse(idStr, out id))
+                {
+                    text = "Erroes in input";
+                    break;
+                }
+
                 if (logic.DeleteAward(id))
                 {
                     text = "Award was successfully deleted.";
@@ -96,6 +200,7 @@
                 {
                     text = "Can't delete this award";
                 }
+
                 break;
             }
         case "AddAwardToUser":

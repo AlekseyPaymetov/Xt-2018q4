@@ -8,7 +8,7 @@ namespace Epam.Task06_3layers.UsersAndAwardsInterfaceBLL
 {
     public interface IAwardLogic<T>
     {
-        T Create(int id, string title);
+        T Create(int id, string title, string imgPath);
 
         bool Add(T someObject);
 

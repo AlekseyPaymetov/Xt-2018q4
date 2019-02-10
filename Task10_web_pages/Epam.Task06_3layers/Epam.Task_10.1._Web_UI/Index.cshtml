@@ -15,16 +15,20 @@
         <div id="UserMenu">
             <div class="caption">User menu</div>
             <button type="submit" id="ShowAllUsers" class="ServerRequest">Show all users</button>
+            <hr />
             <form action="#" id="AddUserForm">
                 <button type="submit" class="ServerRequest" id="AddUser">Add user</button><br />
                 &nbsp;id: <input type="number" class="UserId" />
                 name: <input type="text" class="UserName" />
-                date (dd.mm.yyyy): <input type="text" class="UserBirthDate" />
+                date (dd.mm.yyyy): <input type="text" class="UserBirthDate" /><br />
+                <input type="file" id="ChooseUserImg" accept="image/*" />
             </form>
+            <hr />
             <form action="#" id="DeleteUserForm">
                 <button type="submit" class="ServerRequest" id="DeleteUser">Delete user</button><br />
                 &nbsp;id: <input type="number" class="UserId" />
             </form>
+            <hr />
             <form action="#" id="ChangeUserForm">
                 <button type="submit" class="ServerRequest" id="ChangeUser">Change user</button><br />
                 &nbsp;id: <input type="number" class="OldUserId" />
@@ -33,30 +37,37 @@
                 name: <input type="text" class="UserName" />
                 date (dd.mm.yyyy): <input type="text" class="UserBirthDate" />
             </form>
+
         </div>
         <div id="AwardMenu">
             <div class="caption">Award menu</div>
             <button type="submit" id="ShowAllAwards" class="ServerRequest">Show all awards</button><br />
             <button type="submit" id="ShowAllAwardsAndUsers" class="ServerRequest">Show all awards and users</button>
+            <hr />
             <form id="AddAwardForm" action="#">
                 <button type="submit" id="AddAward" class="ServerRequest">Add award</button><br />
                 &nbsp;id: <input type="number" class="AwardId" />
-                title: <input type="text" class="AwardTitle" />
+                title: <input type="text" class="AwardTitle" /><br />
+                <input type="file" id="ChooseAwardImg" accept="image/*"/>
             </form>
+            <hr />
             <form id="DeleteAwardForm" action="#">
                 <button type="submit" id="DeleteAward" class="ServerRequest">Delete award</button><br />
                 &nbsp;id: <input type="number" class="AwardId" />
             </form>
+            <hr />
             <form id="AddAwardToUserForm" action="#">
                 <button type="submit" id="AddAwardToUser" class="ServerRequest">Add award to user</button><br />
                 &nbsp;id (award): <input type="number" class="AwardId" />
                 id (user): <input type="number" class="UserId" />
             </form>
+            <hr />
             <form id="DeleteUserAwardForm" action="#">
                 <button type="submit" id="DeleteUserAward" class="ServerRequest">Delete a user award</button><br />
                 &nbsp;id (award): <input type="number" class="AwardId" />
                 id (user): <input type="number" class="UserId" />
             </form>
+            <hr />
             <form id="ChangeAwardForm" action="#">
                 <button type="submit" id="ChangeAward" class="ServerRequest">Change award</button><br />
                 &nbsp;id: <input type="number" class="OldAwardId" />
@@ -64,6 +75,7 @@
                 &nbsp;id: <input type="number" class="AwardId" />
                 title: <input type="text" class="AwardTitle" />
             </form>
+            <hr />
             <form id="ChangeUserAwardForm" action="#">
                 <button type="submit" id="ChangeUserAward" class="ServerRequest">Change user award</button><br />
                 &nbsp;id(award): <input type="number" class="OldAwardId" />
@@ -72,6 +84,7 @@
                 &nbsp;id(award): <input type="number" class="AwardId" />
                 id(user): <input type="text" class="UserId" />
             </form>
+            <hr />
             <form id="DeleteUserAwardForm_v2" action="#">
                 <button type="submit" id="DeleteUserAward_v2" class="ServerRequest">Delete a user award</button>(for task 10.2)<br />
                 &nbsp;id (award): <input type="number" class="AwardId" />

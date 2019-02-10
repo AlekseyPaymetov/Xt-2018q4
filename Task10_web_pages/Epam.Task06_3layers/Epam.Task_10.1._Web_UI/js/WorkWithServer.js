@@ -19,18 +19,45 @@
                 })
             }
 
+            function getBase64User(file) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                    var userImg = reader.result;
+
+                    var userId = $('#AddUserForm .UserId').val();
+                    var userName = $('#AddUserForm .UserName').val();
+                    var userBirthDate = $('#AddUserForm .UserBirthDate').val();
+                    $.ajax({
+                        method: "POST",
+                        url: "Logic.cshtml",
+                        data: { action: idInput, id: userId, name: userName, birthDate: userBirthDate, img: userImg },
+                        success: function (responce) {
+                            Output.innerHTML = responce;
+                        }
+                    })
+                };
+            }
+
             if (idInput == 'AddUser') {
-                var userId = $('#AddUserForm .UserId').val();
-                var userName = $('#AddUserForm .UserName').val();
-                var userBirthDate = $('#AddUserForm .UserBirthDate').val();
-                $.ajax({
-                    method: "POST",
-                    url: "Logic.cshtml",
-                    data: { action: idInput, id: userId, name: userName, birthDate: userBirthDate },
-                    success: function (responce) {
-                        Output.innerHTML = responce;
-                    }
-                })
+                var userImgs = document.getElementById("ChooseUserImg").files;
+                if (userImgs.length > 0) {
+                    getBase64User(userImgs[0]);
+                }
+                else {
+                    var userImg = null;
+                    var userId = $('#AddUserForm .UserId').val();
+                    var userName = $('#AddUserForm .UserName').val();
+                    var userBirthDate = $('#AddUserForm .UserBirthDate').val();
+                    $.ajax({
+                        method: "POST",
+                        url: "Logic.cshtml",
+                        data: { action: idInput, id: userId, name: userName, birthDate: userBirthDate, img: userImg },
+                        success: function (responce) {
+                            Output.innerHTML = responce;
+                        }
+                    })
+                }
             }
 
             if (idInput == 'DeleteUser') {
@@ -67,17 +94,42 @@
                 })
             }
 
+            function getBase64Award(file) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                    var userImg = reader.result;
+                    var awardId = $('#AddAwardForm .AwardId').val();
+                    var awardTitle = $('#AddAwardForm .AwardTitle').val();
+                    $.ajax({
+                        method: "POST",
+                        url: "Logic.cshtml",
+                        data: { action: idInput, id: awardId, title: awardTitle, img: userImg },
+                        success: function (responce) {
+                            Output.innerHTML = responce;
+                        }
+                    })
+                };
+            }
+
             if (idInput == 'AddAward') {
-                var awardId = $('#AddAwardForm .AwardId').val();
-                var awardTitle = $('#AddAwardForm .AwardTitle').val();
-                $.ajax({
-                    method: "POST",
-                    url: "Logic.cshtml",
-                    data: { action: idInput, id: awardId, title: awardTitle },
-                    success: function (responce) {
-                        Output.innerHTML = responce;
-                    }
-                })
+                var userImgs = document.getElementById("ChooseAwardImg").files;
+                if (userImgs.length > 0) {
+                    getBase64Award(userImgs[0]);
+                }
+                else {
+                    var userImg = null;
+                    var awardId = $('#AddAwardForm .AwardId').val();
+                    var awardTitle = $('#AddAwardForm .AwardTitle').val();
+                    $.ajax({
+                        method: "POST",
+                        url: "Logic.cshtml",
+                        data: { action: idInput, id: awardId, title: awardTitle, img: userImg },
+                        success: function (responce) {
+                            Output.innerHTML = responce;
+                        }
+                    })
+                }
             }
 
             if (idInput == 'DeleteAward') {

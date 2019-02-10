@@ -20,8 +20,8 @@ namespace Epam.Task06_3layers.UsersAndAwardsBLL
             this.Initialization();
         }
 
-        public Award Create(int id, string title)
-            => new Award(id, title);
+        public Award Create(int id, string title, string imgPath = @"img\award\default.png")
+            => new Award(id, title, imgPath);
 
         public bool Add(Award award)
         {

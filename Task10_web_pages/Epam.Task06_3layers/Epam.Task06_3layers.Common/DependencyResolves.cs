@@ -22,11 +22,11 @@ namespace Epam.Task06_3layers.Common
             this.workWithAwardsToUsers = new AwardToUserLogic();
         }
 
-        public User CreateUser(int id, string name, DateTime dateOfBirth)
-            => this.workWithUsers.Create(id, name, dateOfBirth);
+        public User CreateUser(int id, string name, DateTime dateOfBirth, string imgPath = @"img\users\default.jpg")
+            => this.workWithUsers.Create(id, name, dateOfBirth, imgPath);
 
-        public Award CreateAward(int id, string title)
-            => this.workWithAwards.Create(id, title);
+        public Award CreateAward(int id, string title, string imgPath = @"img\award\default.png")
+            => this.workWithAwards.Create(id, title, imgPath);
 
         public AwardToUser CreateAwardToUser(int idAward, int idUser)
             => this.workWithAwardsToUsers.Create(this.CreateUniqueIdForAwardToUser(), idAward, idUser);
@@ -136,6 +136,7 @@ namespace Epam.Task06_3layers.Common
         public List<string> GetAllInfoAboutUsers()
         {
             List<string> usersInfo = new List<string>();
+
             foreach (var user in this.workWithUsers.GetAll())
             {
                 usersInfo.Add(user.ToString());
@@ -186,6 +187,39 @@ namespace Epam.Task06_3layers.Common
             }
 
             return awardsAndUsers;
+        }
+
+        public List<User> GetAllUsers()
+        {
+            List<User> allUsers = new List<User>();
+            foreach (var item in this.workWithUsers.GetAll())
+            {
+                allUsers.Add(item);
+            }
+
+            return allUsers;
+        }
+            
+        public List<Award> GetAllAwards()
+        {
+            List<Award> allAwards = new List<Award>();
+            foreach (var item in this.workWithAwards.GetAll())
+            {
+                allAwards.Add(item);
+            }
+
+            return allAwards;
+        }
+
+        public List<AwardToUser> GetAllUserAwards()
+        {
+            List<AwardToUser> allUserAwards = new List<AwardToUser>();
+            foreach (var item in this.workWithAwardsToUsers.GetAll())
+            {
+                allUserAwards.Add(item);
+            }
+
+            return allUserAwards;
         }
 
         public bool DeleteAwardFromAllUsers(int idAward, int idUser)

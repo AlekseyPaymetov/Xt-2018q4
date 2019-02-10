@@ -20,9 +20,9 @@ namespace Epam.Task06_3layers.UsersAndAwardsBLL
             this.Initialization();
         }
 
-        public User Create(int id, string name, DateTime dateOfBirth)
+        public User Create(int id, string name, DateTime dateOfBirth, string imgPath = @"img\Default.jpg")
         {
-            return new User(id, name, dateOfBirth);
+            return new User(id, name, dateOfBirth, imgPath);
         }
 
         public bool Add(User user)
