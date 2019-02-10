@@ -55,3 +55,8 @@ input {
     font-size: 16px;
     color: #4090f2;
 }
+
+#Log {
+    margin: 5px;
+    margin-bottom: 10px;
+}

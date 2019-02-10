@@ -91,15 +91,21 @@
     <Content Include="css\web_pages.css" />
     <Content Include="js\jquery-3.3.1.min.js" />
     <Content Include="js\WorkWithServer.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleProvider\MyRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.cshtml" />
     <Content Include="Logic.cshtml" />
+    <Content Include="LogOut.cshtml" />
+    <Content Include="LogIn.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -118,6 +124,14 @@
     <ProjectReference Include="..\Epam.Task06_3layers.Entities\Epam.Task06_3layers.Entities.csproj">
       <Project>{553fb838-200b-4822-aba1-aff1004bb40d}</Project>
       <Name>Epam.Task06_3layers.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.Task06_3layers.UsersAndAwardsDAL\Epam.Task06_3layers.UsersAndAwardsDAL.csproj">
+      <Project>{8F3701BB-12E1-4E3A-B1A7-678DB7016DD1}</Project>
+      <Name>Epam.Task06_3layers.UsersAndAwardsDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epam.Task06_3layers.UsersAndAwardsInterfaceDAL\Epam.Task06_3layers.UsersAndAwardsInterfaceDAL.csproj">
+      <Project>{48333002-2AE4-46B8-A688-188506E2B92C}</Project>
+      <Name>Epam.Task06_3layers.UsersAndAwardsInterfaceDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

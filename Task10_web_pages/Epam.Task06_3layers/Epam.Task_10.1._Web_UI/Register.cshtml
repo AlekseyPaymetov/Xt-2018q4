@@ -1,0 +1,33 @@
+﻿@using Epam.Task06_3layers.UsersAndAwardsDAL;
+@using Epam.Task06_3layers.Entities;
+
+@{
+    if (IsPost)
+    {
+        var login = Request["Login"];
+        var password = Request["Password"];
+        SiteUsersTxtDao siteUser = new SiteUsersTxtDao();
+        if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+        {
+            return;
+        }
+        if (siteUser.Add(new SiteUser(login, password)))
+        {
+            <span>User was succesfully added.</span>
+            <a href="~/Index.cshtml">Return to main page</a>
+        }
+        else
+        {
+            <span>User with this name was registred. Please enter another name.</span><br />
+            <a href="~/Index.cshtml">Return to main page</a>
+        }
+    }
+}
+
+<form action="~/Register.cshtml" method="post" style="margin-top: 10px">
+    <label for="Login">Login:</label>
+    <input type="text" id="Login" name="Login" />
+    <label for="Password">Password:</label>
+    <input type="text" id="Password" name="Password" />
+    <button>Register</button>
+</form>

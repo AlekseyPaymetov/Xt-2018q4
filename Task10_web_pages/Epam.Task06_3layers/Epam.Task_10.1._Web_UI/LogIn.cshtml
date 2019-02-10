@@ -1,0 +1,51 @@
+﻿@using Epam.Task06_3layers.UsersAndAwardsDAL;
+@using Epam.Task06_3layers.Entities
+
+@{
+    if (IsPost)
+    {
+
+        var login = Request["Login"];
+        var password = Request["Password"];
+
+        if (login == "admin" && password == "1234")
+        {
+
+            FormsAuthentication.SetAuthCookie("admin", createPersistentCookie: true);
+            Response.Redirect("~");
+        }
+
+        SiteUsersTxtDao siteUsers = new SiteUsersTxtDao();
+        foreach (SiteUser item in siteUsers.GetAll())
+        {
+            if (item.Name==login && item.Password==password)
+            {
+                FormsAuthentication.SetAuthCookie(login, createPersistentCookie: true);
+                Response.Redirect("~");
+            }
+        }
+        <span>
+            Wrong input. Please try again.<br />
+            Or you can register here:&nbsp;
+        </span>
+        <a href="~/Register.cshtml">Register</a>
+    }
+}
+
+<form action="~/Login.cshtml" method="post" style="margin-top: 10px">
+    <label for="Login">Login:</label>
+    <input type="text" id="Login" name="Login" />
+    <label for="Password">Password:</label>
+    <input type="password" id="Password" name="Password" />
+    <button>Log In</button>
+</form>
+<br />
+Admin<br />
+Login: admin<br />
+Password: 1234<br />
+
+
+
+
+
+

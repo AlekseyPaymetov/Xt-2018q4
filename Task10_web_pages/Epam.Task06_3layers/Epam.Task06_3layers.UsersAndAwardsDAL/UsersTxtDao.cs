@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Epam.Task06_3layers.Entities;
+using Epam.Task06_3layers.UsersAndAwardsInterfaceDAL;
 
 namespace Epam.Task06_3layers.UsersAndAwardsDAL
 {
-    public class UsersTxtDao : UsersAndAwardsInterfaceDAL.AbstractTxtDao<User>
+    public class UsersTxtDao : AbstractTxtDao<User>
     {
         protected override string DirectoryToWork
         { get; } = "txtDB";
