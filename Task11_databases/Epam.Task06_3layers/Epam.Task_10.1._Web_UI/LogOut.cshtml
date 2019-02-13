@@ -1,0 +1,7 @@
+﻿@{
+    FormsAuthentication.SignOut();
+    FormsAuthentication.SetAuthCookie("guest", createPersistentCookie: true);
+    Response.Redirect("Index");
+}
+
+

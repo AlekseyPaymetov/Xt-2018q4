@@ -1,0 +1,361 @@
+﻿@using Epam.Task06_3layers.Common;
+@using Epam.Task06_3layers.Entities;
+@using System.Reflection
+@using Epam.Task06_3layers.UsersAndAwardsDAL
+
+@if (IsAjax)
+{
+    string action = Request.Params["action"];
+    //DependencyResolves logic = new DependencyResolves();
+
+    UserDB_Dao dbUser = new UserDB_Dao();
+    AwardDB_Dao dbAward = new AwardDB_Dao();
+    AwardsToUserDB_Dao dbUserAward = new AwardsToUserDB_Dao();
+
+    string text = string.Empty;
+    switch (action)
+    {
+        case "ShowAllUsers":
+            <p>All users:</p>
+            foreach (User user in dbUser.GetAll())
+            {
+
+                string resultImg = "data:image/jpg;base64," + user.ImgPath;
+                <span>
+                    <img width="64px" height="64px" src="@resultImg" alt="Your ad could be here" title="award" />
+                    <br />
+                    Id: @user.Id
+                    Name: @user.Name
+                    &nbsp;Age: @user.Age
+                    &nbsp;Birth date: @user.DateOfBirth.ToShortDateString()
+                    <br />
+                </span>
+                foreach (var userToAward in dbUserAward.GetAll())
+                {
+                    if (user.Id == userToAward.IdUser)
+                    {
+                        int idAward = userToAward.IdAward;
+                        foreach (var award in dbAward.GetAll())
+                        {
+                            if (award.Id == idAward)
+                            {
+                                resultImg = "data:image/jpg;base64," + award.ImgPath;
+                                <span>
+                                    Has award id: @award.Id
+                                    &nbsp;title: @award.Title
+                                    &nbsp;<img width="32" height="32" src="@resultImg" alt="Your ad could be here"><br />
+                                </span>
+                            }
+                        }
+                    }
+                }
+                <br />
+            }
+            
+            break;
+
+        case "AddUser":
+            {
+                string idStr = Request.Params["id"];
+                string name = Request.Params["name"];
+                string birthDate = Request.Params["birthDate"];
+                string img = Request.Params["img"];
+                DateTime dateOfBirth;
+                int id;
+
+                if (!DateTime.TryParse(birthDate, out dateOfBirth))
+                {
+                    text = "Errors in birth date.";
+                    break;
+                }
+
+                if (!int.TryParse(idStr, out id))
+                {
+                    id = 0;
+                }
+
+                if (string.IsNullOrEmpty(img))
+                {
+                    string filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"img\users\default.jpg");
+                    using (var fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
+                    {
+                        var buffer = new byte[fs.Length];
+                        fs.Read(buffer, 0, (int)fs.Length);
+                        img = Convert.ToBase64String(buffer);
+                    }
+                }
+
+                if (dbUser.Add(new User(id, name, dateOfBirth, img)))
+                {
+                    text = "User was successfully added";
+                }
+                else
+                {
+                    text = "Can't add this user";
+                }
+                break;
+            }
+
+        case "DeleteUser":
+            {
+                string idStr = Request.Params["id"];
+                int id = int.Parse(idStr);
+                if (!int.TryParse(idStr, out id))
+                {
+                    text = "Errors in input";
+                    break;
+                }
+                if (dbUser.Delete(id))
+                {
+                    text = "User was successfully deleted.";
+                }
+                else
+                {
+                    text = "Can't delete this user (no user with this id).";
+                }
+                break;
+            }
+
+        case "ShowAllAwards":
+            {
+                <p>All awards:</p>
+
+                foreach (var award in dbAward.GetAll())
+                {
+                    string resultImg = "data:image/jpg;base64," + award.ImgPath;
+                    <span>
+                        id: @award.Id
+                        &nbsp;title: @award.Title
+                        &nbsp;<img width="32" height="32" src="@resultImg" alt="Your ad could be here" title="award">
+                    </span><br />
+                }
+
+                break;
+            }
+        case "ShowAllAwardsAndUsers":
+            {
+                <p>All awards and users:</p>
+
+
+                foreach (var item in dbUserAward.GetAll())
+                {
+                    <span>User with id: @item.IdUser has award with id: @item.IdAward</span>
+                    <br />
+
+                }
+                break;
+            }
+        case "AddAward":
+            {
+                string idStr = Request.Params["id"];
+                string title = Request.Params["title"];
+                string img = Request.Params["img"];
+                int id;
+                if (!int.TryParse(idStr, out id))
+                {
+                    id = 0;
+                }
+
+                if (string.IsNullOrEmpty(img))
+                {
+                    string filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"img\award\default.png");
+                    using (var fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
+                    {
+                        var buffer = new byte[fs.Length];
+                        fs.Read(buffer, 0, (int)fs.Length);
+                        img = Convert.ToBase64String(buffer);
+                    }
+                }
+
+                if (dbAward.Add(new Award(id, title, img)))
+                {
+                    text = "Award was successfully added";
+                }
+                else
+                {
+                    text = "Can't add this award";
+                }
+
+                break;
+            }
+        case "DeleteAward":
+            {
+                string idStr = Request.Params["id"];
+                int id;
+                if (!int.TryParse(idStr, out id))
+                {
+                    text = "Incorrect id";
+                    break;
+                }
+
+                if (dbAward.Delete(id))
+                {
+                    text = "Award was successfully deleted.";
+                }
+                else
+                {
+                    text = "Can't delete this award";
+                }
+
+                break;
+            }
+        case "AddAwardToUser":
+            {
+                string idStrU = Request.Params["idU"];
+                int idU = int.Parse(idStrU);
+                string idStrA = Request.Params["idA"];
+                int idA = int.Parse(idStrA);
+                if (dbUserAward.Add(new AwardToUser(0, idA, idU)))
+                {
+                    text = "Award to iser was successfully added.";
+                }
+                else
+                {
+                    text = "Can't add this award to user";
+                }
+                break;
+            }
+
+        case "DeleteUserAward":
+            {
+                string idStrU = Request.Params["idU"];
+                int idU = int.Parse(idStrU);
+                string idStrA = Request.Params["idA"];
+                int idA = int.Parse(idStrA);
+                if (dbUserAward.Delete(idA, idU))
+                {
+                    text = "User award was successfully deleted.";
+                }
+                else
+                {
+                    text = "Can't delete this user award";
+                }
+                break;
+            }
+        case "ChangeUser":
+            {
+                string oldIdStr = Request.Params["oldId"];
+                int oldId;
+                string name = Request.Params["name"];
+                string birthDate = Request.Params["birthDate"];
+                if (!DateTime.TryParse(birthDate, out DateTime dateOfBirth) || !int.TryParse(oldIdStr, out oldId))
+                {
+                    text = "Incorrect input.";
+                    break;
+                }
+
+                if (dbUser.Update(oldId, name, dateOfBirth))
+                {
+                    text = "User was successfully changed.";
+                }
+                else
+                {
+                    text = "Can't change user with this id.";
+                }
+
+
+                break;
+            }
+        case "ChangeAward":
+            {
+                string oldIdStr = Request.Params["oldId"];
+                int oldId;
+                string title = Request.Params["title"];
+
+                if (!int.TryParse(oldIdStr, out oldId))
+                {
+                    text = "Incorrect input.";
+                    break;
+                }
+
+                if (dbAward.Update(oldId, title))
+                {
+                    text = "Award was successfully changed.";
+                }
+                else
+                {
+                    text = "Can't change this award";
+                }
+
+
+                break;
+            }
+        case "ChangeUserAward":
+            {
+                string oldUserIdStr = Request.Params["oldUserId"];
+                int oldUserId;
+                string oldAwardIdStr = Request.Params["oldAwardId"];
+                int oldAwardId;
+                string UserIdStr = Request.Params["UserId"];
+                int UserId;
+                string AwardIdStr = Request.Params["AwardId"];
+                int AwardId;
+
+                if (!int.TryParse(oldAwardIdStr, out oldAwardId) || !int.TryParse(oldUserIdStr, out oldUserId) || !int.TryParse(AwardIdStr, out AwardId) || !int.TryParse(UserIdStr, out UserId))
+                {
+                    text = "Incorrect input.";
+                    break;
+                }
+
+                if (dbUserAward.Update(oldAwardId, oldUserId,AwardId, UserId))
+                {
+                    text = "Award to user was successfully changed.";
+                }
+                else
+                {
+                    text = "Can't change this user award.";
+                }
+
+                break;
+            }
+        case "DeleteUserAward_v2":
+            {
+                string idStrUser = Request.Params["idU"];
+                int idUser;
+                string idStrAward = Request.Params["idA"];
+                int idAward;
+
+                if (!int.TryParse(idStrAward, out idAward) || !int.TryParse(idStrUser, out idUser))
+                {
+                    text = "Incorrect input.";
+                    break;
+                }
+
+                if (dbUserAward.Delete(idAward, idUser))
+                {
+                    List<int> idUsersForDel = new List<int>();
+                    foreach (var item in  dbUserAward.GetAll())
+                    {
+                        if (item.IdAward == idAward)
+                        {
+                            idUsersForDel.Add(item.IdUser);
+                        }
+                    }
+
+                    foreach (var item in idUsersForDel)
+                    {
+                        dbUserAward.Delete(item, idAward);
+                    }
+
+                    text = "All awards was successfully deleted.";
+                }
+                else
+                {
+                    text = "Can't delete this award from users";
+                }
+                break;
+            }
+
+        default:
+            text = "Error in index";
+            return;
+    }
+
+    if (!String.IsNullOrEmpty(text))
+    {
+        <span>@text</span>
+    }
+
+    return;
+}
+

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Task 10</title>
+    <link href="~/css/web_pages.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="Log">
+        @{
+            if (!User.Identity.IsAuthenticated)
+            {
+                FormsAuthentication.SetAuthCookie("guest", createPersistentCookie: true);
+                Response.Redirect("~");
+            }
+            <span>
+                Welcome @User.Identity.Name
+            </span>
+            <br />
+            if (User.Identity.Name == "guest")
+            {
+                <a href="~/LogIn">Login</a>
+                <span>or</span>
+                <a href="~/Register">Register</a>
+            }
+            else
+            {
+                <a href="~/LogOut">Logout</a>
+            }
+        }
+    </div>
+    @if (User.IsInRole("admin"))
+    {
+        <div id="Menu">
+            <div id="UserMenu">
+                <div class="caption">User menu</div>
+                <button type="submit" id="ShowAllUsers" class="ServerRequest">Show all users</button>
+                <hr />
+                <form action="#" id="AddUserForm">
+                    <button type="submit" class="ServerRequest" id="AddUser">Add user</button><br />
+                    <input type="number" class="UserId" hidden/>
+                    name: <input type="text" class="UserName" value="userX" />
+                    date (dd.mm.yyyy): <input type="text" class="UserBirthDate" value="1.1.2000" /><br />
+                    <input type="file" id="ChooseUserImg" accept="image/*" />
+                </form>
+                <hr />
+                <form action="#" id="DeleteUserForm">
+                    <button type="submit" class="ServerRequest" id="DeleteUser">Delete user</button><br />
+                    &nbsp;id: <input type="number" class="UserId" />
+                </form>
+                <hr />
+                <form action="#" id="ChangeUserForm">
+                    <button type="submit" class="ServerRequest" id="ChangeUser">Change user</button><br />
+                    &nbsp;id: <input type="number" class="OldUserId" />
+                    <br />New User info<br />
+                    <input type="number" class="UserId" hidden />
+                    name: <input type="text" class="UserName" />
+                    date (dd.mm.yyyy): <input type="text" class="UserBirthDate" />
+                </form>
+
+            </div>
+            <div id="AwardMenu">
+                <div class="caption">Award menu</div>
+                <button type="submit" id="ShowAllAwards" class="ServerRequest">Show all awards</button><br />
+                <button type="submit" id="ShowAllAwardsAndUsers" class="ServerRequest">Show all awards and users</button>
+                <hr />
+                <form id="AddAwardForm" action="#">
+                    <button type="submit" id="AddAward" class="ServerRequest">Add award</button><br />
+                    <input type="number" class="AwardId" hidden/>
+                    title: <input type="text" class="AwardTitle" /><br />
+                    <input type="file" id="ChooseAwardImg" accept="image/*" />
+                </form>
+                <hr />
+                <form id="DeleteAwardForm" action="#">
+                    <button type="submit" id="DeleteAward" class="ServerRequest">Delete award</button><br />
+                    &nbsp;id: <input type="number" class="AwardId" />
+                </form>
+                <hr />
+                <form id="AddAwardToUserForm" action="#">
+                    <button type="submit" id="AddAwardToUser" class="ServerRequest">Add award to user</button><br />
+                    &nbsp;id (award): <input type="number" class="AwardId" />
+                    id (user): <input type="number" class="UserId" />
+                </form>
+                <hr />
+                <form id="DeleteUserAwardForm" action="#">
+                    <button type="submit" id="DeleteUserAward" class="ServerRequest">Delete a user award</button><br />
+                    &nbsp;id (award): <input type="number" class="AwardId" />
+                    id (user): <input type="number" class="UserId" />
+                </form>
+                <hr />
+                <form id="ChangeAwardForm" action="#">
+                    <button type="submit" id="ChangeAward" class="ServerRequest">Change award</button><br />
+                    &nbsp;id: <input type="number" class="OldAwardId" />
+                    <br />New award<br />
+                    <input type="number" class="AwardId" hidden/>
+                    title: <input type="text" class="AwardTitle" />
+                </form>
+                <hr />
+                <form id="ChangeUserAwardForm" action="#">
+                    <button type="submit" id="ChangeUserAward" class="ServerRequest">Change user award</button><br />
+                    &nbsp;id(award): <input type="number" class="OldAwardId" />
+                    id(user): <input type="number" class="OldUserId" />
+                    <br />New user award<br />
+                    &nbsp;id(award): <input type="number" class="AwardId"/>
+                    id(user): <input type="text" class="UserId"/>
+                </form>
+                <hr />
+                <form id="DeleteUserAwardForm_v2" action="#">
+                    <button type="submit" id="DeleteUserAward_v2" class="ServerRequest">Delete a user award</button>(for task 10.2)<br />
+                    &nbsp;id (award): <input type="number" class="AwardId" />
+                    id (user): <input type="number" class="UserId" />
+                </form>
+
+            </div>
+        </div>
+    }
+
+    @if (User.IsInRole("user"))
+    {
+        <div id="Menu">
+            <div id="UserMenu">
+                <div class="caption">User menu</div>
+                <button type="submit" id="ShowAllUsers" class="ServerRequest">Show all users</button>
+            </div>
+            <div id="AwardMenu">
+                <div class="caption">Award menu</div>
+                <button type="submit" id="ShowAllAwards" class="ServerRequest">Show all awards</button><br />
+                <form id="AddAwardToUserForm" action="#">
+                    <button type="submit" id="AddAwardToUser" class="ServerRequest">Add award to user</button><br />
+                    &nbsp;id (award): <input type="number" class="AwardId" />
+                    id (user): <input type="number" class="UserId" />
+                </form>
+            </div>
+        </div>
+    }
+
+    @if (User.IsInRole("guest"))
+    {
+        <button type="submit" id="ShowAllUsers" class="ServerRequest">Show all users</button>
+    }
+
+    <div id="Output">
+        Result
+    </div>
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/WorkWithServer.js"></script>
+</body>
+</html>

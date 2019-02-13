@@ -1,0 +1,64 @@
+﻿body {
+    margin: 0;
+    padding: 5px;
+}
+
+#Menu {
+    display: inline-block;
+  border: 1px solid grey;
+}
+
+#UserMenu, #AwardMenu {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+}
+
+#AwardMenu {
+    border-left: 1px solid grey;
+    padding-left: 5px;
+}
+
+p {
+    font-weight: bold;
+}
+
+button {
+    margin: 5px;
+    border: none;
+    width: 120px;
+    height: 40px;
+    background-color: #4090f2;
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #1d7ef4;
+}
+
+input {
+    width: 100px;
+    margin: 5px;
+}
+input[type="file"] {
+    width: auto;
+}
+#Output {
+    margin: 10px 5px;
+}
+
+.caption {
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #4090f2;
+}
+
+#Log {
+    margin: 5px;
+    margin-bottom: 10px;
+}
